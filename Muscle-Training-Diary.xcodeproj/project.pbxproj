@@ -1,0 +1,876 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		860019F429CFC552000601CB /* TrainingDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860019F329CFC552000601CB /* TrainingDataView.swift */; };
+		860019F629CFC5C2000601CB /* DataInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860019F529CFC5C2000601CB /* DataInputView.swift */; };
+		860019F929D0089D000601CB /* ValueUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860019F829D0089D000601CB /* ValueUnit.swift */; };
+		860019FD29D059CE000601CB /* DataInputStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860019FC29D059CE000601CB /* DataInputStore.swift */; };
+		86001A0129D065DA000601CB /* TrainingDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86001A0029D065DA000601CB /* TrainingDataStore.swift */; };
+		86001A0429D14301000601CB /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86001A0329D14301000601CB /* ChartView.swift */; };
+		86001A0729D1431B000601CB /* ChartStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86001A0629D1431B000601CB /* ChartStore.swift */; };
+		8601508329BF5AF900F35836 /* Muscle_Training_DiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601508229BF5AF900F35836 /* Muscle_Training_DiaryApp.swift */; };
+		8601508529BF5AF900F35836 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601508429BF5AF900F35836 /* ContentView.swift */; };
+		8601508729BF5AFA00F35836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8601508629BF5AFA00F35836 /* Assets.xcassets */; };
+		8601508A29BF5AFA00F35836 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8601508929BF5AFA00F35836 /* Preview Assets.xcassets */; };
+		8601509A29BF5AFA00F35836 /* Muscle_Training_DiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601509929BF5AFA00F35836 /* Muscle_Training_DiaryTests.swift */; };
+		860150A429BF5AFA00F35836 /* Muscle_Training_DiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860150A329BF5AFA00F35836 /* Muscle_Training_DiaryUITests.swift */; };
+		860150A629BF5AFA00F35836 /* Muscle_Training_DiaryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860150A529BF5AFA00F35836 /* Muscle_Training_DiaryUITestsLaunchTests.swift */; };
+		860150B429BF5B9200F35836 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 860150B329BF5B9200F35836 /* ComposableArchitecture */; };
+		860150BA29BF5D6B00F35836 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860150B929BF5D6B00F35836 /* HomeView.swift */; };
+		860150BE29BF5D9700F35836 /* HomeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860150BD29BF5D9700F35836 /* HomeStore.swift */; };
+		860150C129BF5ED900F35836 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 860150C029BF5ED900F35836 /* GoogleService-Info.plist */; };
+		860150C429BF5F7700F35836 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 860150C329BF5F7700F35836 /* FirebaseAnalytics */; };
+		860150C629BF5F7700F35836 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 860150C529BF5F7700F35836 /* FirebaseAppCheck */; };
+		860150C829BF5F7700F35836 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 860150C729BF5F7700F35836 /* FirebaseAppDistribution-Beta */; };
+		860150CA29BF5F7700F35836 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 860150C929BF5F7700F35836 /* FirebaseAuth */; };
+		860150CC29BF5F7700F35836 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 860150CB29BF5F7700F35836 /* FirebaseCrashlytics */; };
+		860150CE29BF5F7700F35836 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 860150CD29BF5F7700F35836 /* FirebaseDatabase */; };
+		860150D029BF5F7700F35836 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 860150CF29BF5F7700F35836 /* FirebaseFirestore */; };
+		860150D229BF5F7700F35836 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 860150D129BF5F7700F35836 /* FirebaseFunctions */; };
+		860150D429BF5F7700F35836 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 860150D329BF5F7700F35836 /* FirebaseMessaging */; };
+		860150D629BF5F7700F35836 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 860150D529BF5F7700F35836 /* FirebasePerformance */; };
+		860150D829BF5F7700F35836 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 860150D729BF5F7700F35836 /* FirebaseRemoteConfig */; };
+		860150DA29BF5F7700F35836 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 860150D929BF5F7700F35836 /* FirebaseStorage */; };
+		860150DD29BF620C00F35836 /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860150DC29BF620C00F35836 /* FirebaseClient.swift */; };
+		860150DF29BF63CA00F35836 /* TrainingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860150DE29BF63CA00F35836 /* TrainingData.swift */; };
+		8601511F29C22A2C00F35836 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601511E29C22A2C00F35836 /* LoadState.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8601509629BF5AFA00F35836 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8601507729BF5AF900F35836 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8601507E29BF5AF900F35836;
+			remoteInfo = "Muscle-Training-Diary";
+		};
+		860150A029BF5AFA00F35836 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8601507729BF5AF900F35836 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8601507E29BF5AF900F35836;
+			remoteInfo = "Muscle-Training-Diary";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		860019F329CFC552000601CB /* TrainingDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingDataView.swift; sourceTree = "<group>"; };
+		860019F529CFC5C2000601CB /* DataInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInputView.swift; sourceTree = "<group>"; };
+		860019F829D0089D000601CB /* ValueUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueUnit.swift; sourceTree = "<group>"; };
+		860019FC29D059CE000601CB /* DataInputStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInputStore.swift; sourceTree = "<group>"; };
+		86001A0029D065DA000601CB /* TrainingDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingDataStore.swift; sourceTree = "<group>"; };
+		86001A0329D14301000601CB /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		86001A0629D1431B000601CB /* ChartStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartStore.swift; sourceTree = "<group>"; };
+		8601507F29BF5AF900F35836 /* Muscle-Training-Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Muscle-Training-Diary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8601508229BF5AF900F35836 /* Muscle_Training_DiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muscle_Training_DiaryApp.swift; sourceTree = "<group>"; };
+		8601508429BF5AF900F35836 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8601508629BF5AFA00F35836 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8601508929BF5AFA00F35836 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8601509029BF5AFA00F35836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8601509529BF5AFA00F35836 /* Muscle-Training-DiaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Muscle-Training-DiaryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8601509929BF5AFA00F35836 /* Muscle_Training_DiaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muscle_Training_DiaryTests.swift; sourceTree = "<group>"; };
+		8601509F29BF5AFA00F35836 /* Muscle-Training-DiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Muscle-Training-DiaryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		860150A329BF5AFA00F35836 /* Muscle_Training_DiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muscle_Training_DiaryUITests.swift; sourceTree = "<group>"; };
+		860150A529BF5AFA00F35836 /* Muscle_Training_DiaryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muscle_Training_DiaryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		860150B929BF5D6B00F35836 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		860150BD29BF5D9700F35836 /* HomeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStore.swift; sourceTree = "<group>"; };
+		860150C029BF5ED900F35836 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		860150DC29BF620C00F35836 /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
+		860150DE29BF63CA00F35836 /* TrainingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingData.swift; sourceTree = "<group>"; };
+		8601511E29C22A2C00F35836 /* LoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8601507C29BF5AF900F35836 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				860150D629BF5F7700F35836 /* FirebasePerformance in Frameworks */,
+				860150C429BF5F7700F35836 /* FirebaseAnalytics in Frameworks */,
+				860150CA29BF5F7700F35836 /* FirebaseAuth in Frameworks */,
+				860150D829BF5F7700F35836 /* FirebaseRemoteConfig in Frameworks */,
+				860150D429BF5F7700F35836 /* FirebaseMessaging in Frameworks */,
+				860150C629BF5F7700F35836 /* FirebaseAppCheck in Frameworks */,
+				860150D229BF5F7700F35836 /* FirebaseFunctions in Frameworks */,
+				860150CC29BF5F7700F35836 /* FirebaseCrashlytics in Frameworks */,
+				860150DA29BF5F7700F35836 /* FirebaseStorage in Frameworks */,
+				860150B429BF5B9200F35836 /* ComposableArchitecture in Frameworks */,
+				860150D029BF5F7700F35836 /* FirebaseFirestore in Frameworks */,
+				860150CE29BF5F7700F35836 /* FirebaseDatabase in Frameworks */,
+				860150C829BF5F7700F35836 /* FirebaseAppDistribution-Beta in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8601509229BF5AFA00F35836 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8601509C29BF5AFA00F35836 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		860019FA29D059AC000601CB /* DataInput */ = {
+			isa = PBXGroup;
+			children = (
+				860019FB29D059BD000601CB /* Store */,
+				860019F529CFC5C2000601CB /* DataInputView.swift */,
+			);
+			path = DataInput;
+			sourceTree = "<group>";
+		};
+		860019FB29D059BD000601CB /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				860019FC29D059CE000601CB /* DataInputStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		860019FE29D06599000601CB /* TrainingData */ = {
+			isa = PBXGroup;
+			children = (
+				860019FF29D065BF000601CB /* Store */,
+				860019F329CFC552000601CB /* TrainingDataView.swift */,
+			);
+			path = TrainingData;
+			sourceTree = "<group>";
+		};
+		860019FF29D065BF000601CB /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				86001A0029D065DA000601CB /* TrainingDataStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		86001A0229D142E8000601CB /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				86001A0529D14306000601CB /* Store */,
+				86001A0329D14301000601CB /* ChartView.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		86001A0529D14306000601CB /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				86001A0629D1431B000601CB /* ChartStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		8601507629BF5AF900F35836 = {
+			isa = PBXGroup;
+			children = (
+				860150C029BF5ED900F35836 /* GoogleService-Info.plist */,
+				8601508129BF5AF900F35836 /* Muscle-Training-Diary */,
+				8601509829BF5AFA00F35836 /* Muscle-Training-DiaryTests */,
+				860150A229BF5AFA00F35836 /* Muscle-Training-DiaryUITests */,
+				8601508029BF5AF900F35836 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8601508029BF5AF900F35836 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8601507F29BF5AF900F35836 /* Muscle-Training-Diary.app */,
+				8601509529BF5AFA00F35836 /* Muscle-Training-DiaryTests.xctest */,
+				8601509F29BF5AFA00F35836 /* Muscle-Training-DiaryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8601508129BF5AF900F35836 /* Muscle-Training-Diary */ = {
+			isa = PBXGroup;
+			children = (
+				860150BF29BF5E2300F35836 /* Entities */,
+				860150B829BF5D4E00F35836 /* Views */,
+				860150B529BF5BB200F35836 /* Repositories */,
+				8601508229BF5AF900F35836 /* Muscle_Training_DiaryApp.swift */,
+				8601508629BF5AFA00F35836 /* Assets.xcassets */,
+				8601509029BF5AFA00F35836 /* Info.plist */,
+				8601508829BF5AFA00F35836 /* Preview Content */,
+			);
+			path = "Muscle-Training-Diary";
+			sourceTree = "<group>";
+		};
+		8601508829BF5AFA00F35836 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8601508929BF5AFA00F35836 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8601509829BF5AFA00F35836 /* Muscle-Training-DiaryTests */ = {
+			isa = PBXGroup;
+			children = (
+				8601509929BF5AFA00F35836 /* Muscle_Training_DiaryTests.swift */,
+			);
+			path = "Muscle-Training-DiaryTests";
+			sourceTree = "<group>";
+		};
+		860150A229BF5AFA00F35836 /* Muscle-Training-DiaryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				860150A329BF5AFA00F35836 /* Muscle_Training_DiaryUITests.swift */,
+				860150A529BF5AFA00F35836 /* Muscle_Training_DiaryUITestsLaunchTests.swift */,
+			);
+			path = "Muscle-Training-DiaryUITests";
+			sourceTree = "<group>";
+		};
+		860150B529BF5BB200F35836 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				860150DB29BF61FE00F35836 /* Client */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		860150B829BF5D4E00F35836 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8601508429BF5AF900F35836 /* ContentView.swift */,
+				860019FA29D059AC000601CB /* DataInput */,
+				860019FE29D06599000601CB /* TrainingData */,
+				86001A0229D142E8000601CB /* Chart */,
+				860150BB29BF5D7200F35836 /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		860150BB29BF5D7200F35836 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				860150BC29BF5D8B00F35836 /* Store */,
+				860150B929BF5D6B00F35836 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		860150BC29BF5D8B00F35836 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				860150BD29BF5D9700F35836 /* HomeStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		860150BF29BF5E2300F35836 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				860150DE29BF63CA00F35836 /* TrainingData.swift */,
+				8601511E29C22A2C00F35836 /* LoadState.swift */,
+				860019F829D0089D000601CB /* ValueUnit.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		860150DB29BF61FE00F35836 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				860150DC29BF620C00F35836 /* FirebaseClient.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8601507E29BF5AF900F35836 /* Muscle-Training-Diary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 860150A929BF5AFA00F35836 /* Build configuration list for PBXNativeTarget "Muscle-Training-Diary" */;
+			buildPhases = (
+				8601507B29BF5AF900F35836 /* Sources */,
+				8601507C29BF5AF900F35836 /* Frameworks */,
+				8601507D29BF5AF900F35836 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Muscle-Training-Diary";
+			packageProductDependencies = (
+				860150B329BF5B9200F35836 /* ComposableArchitecture */,
+				860150C329BF5F7700F35836 /* FirebaseAnalytics */,
+				860150C529BF5F7700F35836 /* FirebaseAppCheck */,
+				860150C729BF5F7700F35836 /* FirebaseAppDistribution-Beta */,
+				860150C929BF5F7700F35836 /* FirebaseAuth */,
+				860150CB29BF5F7700F35836 /* FirebaseCrashlytics */,
+				860150CD29BF5F7700F35836 /* FirebaseDatabase */,
+				860150CF29BF5F7700F35836 /* FirebaseFirestore */,
+				860150D129BF5F7700F35836 /* FirebaseFunctions */,
+				860150D329BF5F7700F35836 /* FirebaseMessaging */,
+				860150D529BF5F7700F35836 /* FirebasePerformance */,
+				860150D729BF5F7700F35836 /* FirebaseRemoteConfig */,
+				860150D929BF5F7700F35836 /* FirebaseStorage */,
+			);
+			productName = "Muscle-Training-Diary";
+			productReference = 8601507F29BF5AF900F35836 /* Muscle-Training-Diary.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8601509429BF5AFA00F35836 /* Muscle-Training-DiaryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 860150AC29BF5AFA00F35836 /* Build configuration list for PBXNativeTarget "Muscle-Training-DiaryTests" */;
+			buildPhases = (
+				8601509129BF5AFA00F35836 /* Sources */,
+				8601509229BF5AFA00F35836 /* Frameworks */,
+				8601509329BF5AFA00F35836 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8601509729BF5AFA00F35836 /* PBXTargetDependency */,
+			);
+			name = "Muscle-Training-DiaryTests";
+			productName = "Muscle-Training-DiaryTests";
+			productReference = 8601509529BF5AFA00F35836 /* Muscle-Training-DiaryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8601509E29BF5AFA00F35836 /* Muscle-Training-DiaryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 860150AF29BF5AFA00F35836 /* Build configuration list for PBXNativeTarget "Muscle-Training-DiaryUITests" */;
+			buildPhases = (
+				8601509B29BF5AFA00F35836 /* Sources */,
+				8601509C29BF5AFA00F35836 /* Frameworks */,
+				8601509D29BF5AFA00F35836 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				860150A129BF5AFA00F35836 /* PBXTargetDependency */,
+			);
+			name = "Muscle-Training-DiaryUITests";
+			productName = "Muscle-Training-DiaryUITests";
+			productReference = 8601509F29BF5AFA00F35836 /* Muscle-Training-DiaryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8601507729BF5AF900F35836 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					8601507E29BF5AF900F35836 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					8601509429BF5AFA00F35836 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 8601507E29BF5AF900F35836;
+					};
+					8601509E29BF5AFA00F35836 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 8601507E29BF5AF900F35836;
+					};
+				};
+			};
+			buildConfigurationList = 8601507A29BF5AF900F35836 /* Build configuration list for PBXProject "Muscle-Training-Diary" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8601507629BF5AF900F35836;
+			packageReferences = (
+				860150B229BF5B9200F35836 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				860150C229BF5F7700F35836 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = 8601508029BF5AF900F35836 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8601507E29BF5AF900F35836 /* Muscle-Training-Diary */,
+				8601509429BF5AFA00F35836 /* Muscle-Training-DiaryTests */,
+				8601509E29BF5AFA00F35836 /* Muscle-Training-DiaryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8601507D29BF5AF900F35836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8601508A29BF5AFA00F35836 /* Preview Assets.xcassets in Resources */,
+				8601508729BF5AFA00F35836 /* Assets.xcassets in Resources */,
+				860150C129BF5ED900F35836 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8601509329BF5AFA00F35836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8601509D29BF5AFA00F35836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8601507B29BF5AF900F35836 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8601511F29C22A2C00F35836 /* LoadState.swift in Sources */,
+				86001A0429D14301000601CB /* ChartView.swift in Sources */,
+				86001A0729D1431B000601CB /* ChartStore.swift in Sources */,
+				86001A0129D065DA000601CB /* TrainingDataStore.swift in Sources */,
+				860150BE29BF5D9700F35836 /* HomeStore.swift in Sources */,
+				860019F629CFC5C2000601CB /* DataInputView.swift in Sources */,
+				860019F929D0089D000601CB /* ValueUnit.swift in Sources */,
+				860019F429CFC552000601CB /* TrainingDataView.swift in Sources */,
+				860150BA29BF5D6B00F35836 /* HomeView.swift in Sources */,
+				860019FD29D059CE000601CB /* DataInputStore.swift in Sources */,
+				860150DD29BF620C00F35836 /* FirebaseClient.swift in Sources */,
+				860150DF29BF63CA00F35836 /* TrainingData.swift in Sources */,
+				8601508529BF5AF900F35836 /* ContentView.swift in Sources */,
+				8601508329BF5AF900F35836 /* Muscle_Training_DiaryApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8601509129BF5AFA00F35836 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8601509A29BF5AFA00F35836 /* Muscle_Training_DiaryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8601509B29BF5AFA00F35836 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				860150A429BF5AFA00F35836 /* Muscle_Training_DiaryUITests.swift in Sources */,
+				860150A629BF5AFA00F35836 /* Muscle_Training_DiaryUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8601509729BF5AFA00F35836 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8601507E29BF5AF900F35836 /* Muscle-Training-Diary */;
+			targetProxy = 8601509629BF5AFA00F35836 /* PBXContainerItemProxy */;
+		};
+		860150A129BF5AFA00F35836 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8601507E29BF5AF900F35836 /* Muscle-Training-Diary */;
+			targetProxy = 860150A029BF5AFA00F35836 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		860150A729BF5AFA00F35836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		860150A829BF5AFA00F35836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		860150AA29BF5AFA00F35836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 202303271833;
+				DEVELOPMENT_ASSET_PATHS = "\"Muscle-Training-Diary/Preview Content\"";
+				DEVELOPMENT_TEAM = 97TBWXLG65;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "筋トレ日記";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hideto1198.Muscle-Training-Diary";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		860150AB29BF5AFA00F35836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 202303271833;
+				DEVELOPMENT_ASSET_PATHS = "\"Muscle-Training-Diary/Preview Content\"";
+				DEVELOPMENT_TEAM = 97TBWXLG65;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "筋トレ日記";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hideto1198.Muscle-Training-Diary";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		860150AD29BF5AFA00F35836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 97TBWXLG65;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hideto1198.Muscle-Training-DiaryTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Muscle-Training-Diary.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Muscle-Training-Diary";
+			};
+			name = Debug;
+		};
+		860150AE29BF5AFA00F35836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 97TBWXLG65;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hideto1198.Muscle-Training-DiaryTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Muscle-Training-Diary.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Muscle-Training-Diary";
+			};
+			name = Release;
+		};
+		860150B029BF5AFA00F35836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 97TBWXLG65;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hideto1198.Muscle-Training-DiaryUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Muscle-Training-Diary";
+			};
+			name = Debug;
+		};
+		860150B129BF5AFA00F35836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 97TBWXLG65;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hideto1198.Muscle-Training-DiaryUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Muscle-Training-Diary";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8601507A29BF5AF900F35836 /* Build configuration list for PBXProject "Muscle-Training-Diary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				860150A729BF5AFA00F35836 /* Debug */,
+				860150A829BF5AFA00F35836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		860150A929BF5AFA00F35836 /* Build configuration list for PBXNativeTarget "Muscle-Training-Diary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				860150AA29BF5AFA00F35836 /* Debug */,
+				860150AB29BF5AFA00F35836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		860150AC29BF5AFA00F35836 /* Build configuration list for PBXNativeTarget "Muscle-Training-DiaryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				860150AD29BF5AFA00F35836 /* Debug */,
+				860150AE29BF5AFA00F35836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		860150AF29BF5AFA00F35836 /* Build configuration list for PBXNativeTarget "Muscle-Training-DiaryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				860150B029BF5AFA00F35836 /* Debug */,
+				860150B129BF5AFA00F35836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		860150B229BF5B9200F35836 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		860150C229BF5F7700F35836 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		860150B329BF5B9200F35836 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 860150B229BF5B9200F35836 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		860150C329BF5F7700F35836 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 860150C229BF5F7700F35836 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		860150C529BF5F7700F35836 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 860150C229BF5F7700F35836 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		860150C729BF5F7700F35836 /* FirebaseAppDistribution-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 860150C229BF5F7700F35836 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAppDistribution-Beta";
+		};
+		860150C929BF5F7700F35836 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 860150C229BF5F7700F35836 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		860150CB29BF5F7700F35836 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 860150C229BF5F7700F35836 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		860150CD29BF5F7700F35836 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 860150C229BF5F7700F35836 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		860150CF29BF5F7700F35836 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 860150C229BF5F7700F35836 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		860150D129BF5F7700F35836 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 860150C229BF5F7700F35836 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		860150D329BF5F7700F35836 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 860150C229BF5F7700F35836 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		860150D529BF5F7700F35836 /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 860150C229BF5F7700F35836 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
+		};
+		860150D729BF5F7700F35836 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 860150C229BF5F7700F35836 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		860150D929BF5F7700F35836 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 860150C229BF5F7700F35836 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8601507729BF5AF900F35836 /* Project object */;
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>521906202296-ou2rvm4evsto0eqosg2gkr1fbo18fnt3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.521906202296-ou2rvm4evsto0eqosg2gkr1fbo18fnt3</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBpwpA8O8gBEkEuWmtS4LHhv1XpUcz0Mw8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>521906202296</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>hideto1198.Muscle-Training-Diary</string>
+	<key>PROJECT_ID</key>
+	<string>muscle-training-diary</string>
+	<key>STORAGE_BUCKET</key>
+	<string>muscle-training-diary.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:521906202296:ios:9f5265d2c3fb6b0c6ef64d</string>
+</dict>
+</plist>
