@@ -33,7 +33,6 @@ struct HomeStore: ReducerProtocol {
         case fetchTrainingDataResponse(TaskResult<[TrainingData]>)
         case onRegistered
         case toHideImage
-        case setSheet(isPresented: Bool)
         case dataInputAction(DataInputStore.Action)
         case trainingDataAction(TrainingDataStore.Action)
         case chartAction(ChartStore.Action)
@@ -61,6 +60,10 @@ struct HomeStore: ReducerProtocol {
                 }
             case .fetchTrainingDataResponse(.success(let datas)):
                 state.trainingDatas = datas
+                state.chartState = ChartStore.State(
+                    trainingDatas: state.trainingDatas,
+                    trainingNames: Array(Set(state.trainingDatas.map{ $0.trainingName }))
+                )
                 return .none
             case .fetchTrainingDataResponse(.failure):
                 return .none
@@ -75,15 +78,6 @@ struct HomeStore: ReducerProtocol {
             case .toHideImage:
                 state.loadState = .none
                 state.offsetY = 0
-                return .none
-            case .setSheet(isPresented: true):
-                state.chartState = ChartStore.State(
-                    trainingDatas: state.trainingDatas,
-                    trainingNames: Array(Set(state.trainingDatas.map{ $0.trainingName }))
-                )
-                return .none
-            case .setSheet(isPresented: false):
-                state.chartState = nil
                 return .none
             case .dataInputAction(.setTrainingDataResponse):
                 state.loadState = .loaded
