@@ -12,6 +12,21 @@ struct HomeView: View {
     let store: StoreOf<HomeStore>
 
     var body: some View {
+        TabView {
+            content
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("ホーム")
+                }
+            chart
+                .tabItem {
+                    Image(systemName: "chart.line.uptrend.xyaxis")
+                    Text("グラフ")
+                }
+        }
+    }
+
+    var content: some View {
         WithViewStore(store) { viewStore in
             NavigationView {
                 ZStack {
@@ -51,28 +66,17 @@ struct HomeView: View {
                 .background(Color("backColor"))
                 .navigationTitle("筋トレ日記")
                 .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem {
-                        Button(
-                            action: {
-                                viewStore.send(.setSheet(isPresented: true))
-                            },
-                            label: {
-                                Image(systemName: "chart.line.uptrend.xyaxis")
-                            }
-                        )
-                    }
-                }
                 .onAppear {
                     viewStore.send(.onAppear)
                 }
             }
-            .sheet(isPresented: viewStore.binding(get: \.isSheetPresented, send: HomeStore.Action.setSheet(isPresented:))) {
-                IfLetStore(store.scope(state: \.chartState,
-                                       action: HomeStore.Action.chartAction)) {
-                    ChartView(store: $0)
-                }
-            }
+        }
+    }
+
+    private var chart: some View {
+        IfLetStore(store.scope(state: \.chartState,
+                               action: HomeStore.Action.chartAction)) {
+            ChartView(store: $0)
         }
     }
 
