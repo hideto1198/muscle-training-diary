@@ -55,11 +55,12 @@ struct ChartStore: ReducerProtocol {
             case .onTapped(let date, isExclusive: true):
                 return EffectTask(value: .set(date))
             case .set(let date):
+                guard let date = date else { return .none }
                 state.selectedDate = date
                 state.selectedItem = state.trainingDatas.first(where: { $0.trainingDate == date })
                 let currentDatas = state.trainingDatas.filter { $0.trainingName == state.trainingNames[state.trainingNameIndex] }
-                state.selectedItems = currentDatas.filter { $0.trainingDate!.contains(date!) }
-                if Array(state.groupedDatas.keys.map { String($0) }).sorted(by: { compare($0, $1) }).firstIndex(of: date!)! < state.groupedDatas.keys.count  / 2 {
+                state.selectedItems = currentDatas.filter { $0.trainingDate!.contains(date) }
+                if Array(state.groupedDatas.keys.map { String($0) }).sorted(by: { compare($0, $1) }).firstIndex(of: date)! < state.groupedDatas.keys.count  / 2 {
                     state.annotationPosition = .trailing
                 } else {
                     state.annotationPosition = .leading

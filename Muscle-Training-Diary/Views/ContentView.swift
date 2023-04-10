@@ -9,6 +9,10 @@ import SwiftUI
 import ComposableArchitecture
 
 struct ContentView: View {
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor(Color("backColor"))
+    }
+
     var body: some View {
         HomeView(store: Store(initialState: .init(),
                               reducer: HomeStore()))

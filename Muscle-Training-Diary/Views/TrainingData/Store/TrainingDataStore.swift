@@ -12,6 +12,7 @@ struct TrainingDataStore: ReducerProtocol {
     struct State: Equatable {
         var trainingDatas: [TrainingData] = []
         var dataInputState: DataInputStore.State?
+        var loadState: LoadState = .none
     }
 
     enum Action: Equatable {
@@ -30,12 +31,15 @@ struct TrainingDataStore: ReducerProtocol {
                 state.dataInputState = DataInputStore.State(trainingNameValues: Array(Set(state.trainingDatas.map{ $0.trainingName })))
                 return EffectTask(value: Action.dataInputAction(.onEdit(data)))
             case .deleteTrainingData(let data):
+                state.loadState = .loading
                 return .task { [data = data] in
                     await .deleteTrainingDataResponse(TaskResult { try await firebaseClient.deleteTrainingData(data) })
                 }
             case .deleteTrainingDataResponse(.success):
+                state.loadState = .none
                 return .none
             case .deleteTrainingDataResponse(.failure):
+                state.loadState = .none
                 return .none
             case .dataInputAction(.alertDimiss):
                 state.dataInputState = nil

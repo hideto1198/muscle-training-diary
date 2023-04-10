@@ -10,6 +10,7 @@ import ComposableArchitecture
 
 struct DataInputView: View {
     let store: StoreOf<DataInputStore>
+    @FocusState var focusedField: DataInputStore.State.Field?
 
     var body: some View {
         ZStack {
@@ -67,6 +68,7 @@ struct DataInputView: View {
                     TextField("",  text: viewStore.binding(\.$weight))
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .keyboardType(.decimalPad)
+                        .focused($focusedField, equals: .weight)
                     Picker("", selection: viewStore.binding(\.$currentUnit)) {
                         ForEach(ValueUnit.allCases, id: \.self) { unit in
                             Text(unit.label)
@@ -98,6 +100,10 @@ struct DataInputView: View {
             }
             .frame(maxWidth: .infinity)
             .padding()
+            .synchronize(viewStore.binding(\.$focusedField), self.$focusedField)
+            .onAppear {
+                viewStore.send(.onAppear)
+            }
         }
     }
 
@@ -134,6 +140,17 @@ struct DataInputView: View {
     private var buttonWidth: CGFloat {
         (UIScreen.main.bounds.width - 80) / 2
     }
+}
+
+extension View {
+  func synchronize<Value>(
+    _ first: Binding<Value>,
+    _ second: FocusState<Value>.Binding
+  ) -> some View {
+    self
+      .onChange(of: first.wrappedValue) { second.wrappedValue = $0 }
+      .onChange(of: second.wrappedValue) { first.wrappedValue = $0 }
+  }
 }
 
 struct AlertView_Previews: PreviewProvider {

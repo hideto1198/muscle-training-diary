@@ -53,7 +53,7 @@ extension FirebaseClient: DependencyKey {
                     )
                 )
             }
-            return result
+            return result.sorted(by: { $0.trainingDate! > $1.trainingDate! })
         }, deleteTrainingData: { trainingData in
             guard let trainingDate = trainingData.trainingDate else { fatalError("nil") }
             try await db.collection("USERS").document(userId).collection("TRAINING_DATA").document(trainingDate).delete()

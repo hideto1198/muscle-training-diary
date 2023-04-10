@@ -48,21 +48,7 @@ struct ChartView: View {
                         }))!)
                     )
                 }
-//                ForEach(viewStore.trainingDatas.filter {$0.trainingName == viewStore.trainingNames[viewStore.trainingNameIndex]}) {
-//                    LineMark(
-//                        x: .value("日付", $0.trainingDate ?? ""),
-//                        y: .value("記録", $0.value)
-//                    )
-//                    .lineStyle(StrokeStyle(lineWidth: 1))
-                    .symbol(by: .value("Form", "総量"))
-//                    LineMark(
-//                        x: .value("日付", $0.trainingDate ?? ""),
-//                        y: .value("記録", $0.weight)
-//                    )
-//                    .lineStyle(StrokeStyle(lineWidth: 1))
-//                    .symbol(by: .value("Form", "実重量"))
-//                    .foregroundStyle(Color.red)
-//                }
+                .symbol(by: .value("Form", "総量"))
                 if let selectedDate = viewStore.selectedDate {
                     RectangleMark(x: .value("Month", selectedDate), width: 25)
                                 .foregroundStyle(.primary.opacity(0.2))

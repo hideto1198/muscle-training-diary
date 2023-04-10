@@ -38,9 +38,16 @@ struct DataInputStore: ReducerProtocol {
         }
         var inputType: InputType = .select
         var trainingDate: String?
+
+        @BindingState var focusedField: Field?
+
+        enum Field: String, Hashable {
+            case weight, memo
+        }
     }
 
     enum Action: BindableAction, Equatable {
+        case onAppear
         case binding(BindingAction<State>)
         case setTrainignData
         case setTrainingDataResponse(TaskResult<Bool>)
@@ -55,13 +62,18 @@ struct DataInputStore: ReducerProtocol {
         BindingReducer()
         Reduce { state, action in
             switch action {
+            case .onAppear:
+                state.focusedField = .weight
+                return .none
             case .binding:
                 return .none
             case .setTrainignData:
+                state.focusedField = nil
                 if !state.trainingNameValues.isEmpty && state.trainingName == "" {
                     state.trainingName = state.trainingNameValues[state.trainingNameValueIndex]
                 }
-                guard (state.weight != "" || state.memo != "") && state.trainingName != "" else { return .none }
+                guard state.trainingName != "" else { return .none }
+                guard state.count != 0 || state.weight != "" else { return .none }
                 guard let weight = Double(state.weight == "" ? "0" : state.weight ) else { return EffectTask(value: .alertDimiss) }
                 let trainingData = TrainingData(trainingDate: state.trainingDate,
                                                 trainingName: state.trainingName,
@@ -91,6 +103,7 @@ struct DataInputStore: ReducerProtocol {
                 state.inputType = state.inputType.reverse()
                 return .none
             case .alertDimiss:
+                state.focusedField = nil
                 state.trainingName = ""
                 state.weight = ""
                 state.memo = ""

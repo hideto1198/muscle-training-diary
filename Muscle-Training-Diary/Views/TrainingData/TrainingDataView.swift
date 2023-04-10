@@ -25,11 +25,13 @@ struct TrainingDataView: View {
                                 VStack(alignment: .leading) {
                                     Text(data.trainingName)
                                         .font(.system(size: 20, weight: .black))
-                                    HStack {
-                                        Text(String(format: "%.2f", data.weight))
-                                        Text(data.valueUnit.label)
+                                    if String(format: "%.2f", data.weight) != "0.00" {
+                                        HStack {
+                                            Text(String(format: "%.2f", data.weight))
+                                            Text(data.valueUnit.label)
+                                        }
+                                        .font(.system(size: 20, weight: .black))
                                     }
-                                    .font(.system(size: 20, weight: .black))
                                     setCountView(data: data)
                                     memoView(memo: data.memo)
                                 }
@@ -46,6 +48,10 @@ struct TrainingDataView: View {
                     }
                 }
                 alert
+                if viewStore.loadState == .loading {
+                    ProgressView("通信中")
+                        .progressViewStyle(CircularProgressViewStyle())
+                }
             }
         }
     }
