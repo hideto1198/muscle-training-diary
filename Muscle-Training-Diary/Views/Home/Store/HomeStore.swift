@@ -40,6 +40,7 @@ struct HomeStore: ReducerProtocol {
         case onRegistered
         case toHideImage
         case dataInputAction(DataInputStore.Action)
+        case dataEditAction(DataInputStore.Action)
         case trainingDataAction(TrainingDataStore.Action)
         case chartAction(ChartStore.Action)
         case setColumns(GridStyle)
@@ -114,12 +115,16 @@ struct HomeStore: ReducerProtocol {
                 return EffectTask(value: Action.fetchTrainingData)
             case .dataInputAction(.alertDimiss):
                 state.dataInputState = nil
-                state.dataEditState = nil
                 return .none
             case .onEdit(let data):
                 state.dataEditState = DataInputStore.State(trainingNameValues: Array(Set(state.trainingDatas.map{ $0.trainingName })))
-                return EffectTask(value: Action.dataInputAction(.onEdit(data)))
+                return EffectTask(value: Action.dataEditAction(.onEdit(data)))
             case .dataInputAction:
+                return .none
+            case .dataEditAction(.alertDimiss):
+                state.dataEditState = nil
+                return .none
+            case .dataEditAction:
                 return .none
             case .trainingDataAction:
                 return .none
@@ -130,7 +135,7 @@ struct HomeStore: ReducerProtocol {
         .ifLet(\.dataInputState, action: /Action.dataInputAction) {
             DataInputStore()
         }
-        .ifLet(\.dataEditState, action: /Action.dataInputAction) {
+        .ifLet(\.dataEditState, action: /Action.dataEditAction) {
             DataInputStore()
         }
         .ifLet(\.chartState, action: /Action.chartAction) {

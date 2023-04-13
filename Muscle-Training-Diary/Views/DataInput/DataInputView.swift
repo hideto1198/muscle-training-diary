@@ -77,22 +77,14 @@ struct DataInputView: View {
                     }
                 }
                 HStack {
-                    Picker("", selection: viewStore.binding(\.$count)) {
-                        ForEach(0...100, id: \.self) { count in
-                            Text("\(count)")
-                                .tag(count)
-                        }
-                    }
-                    .frame(width: 40)
+                    TextField("", text: viewStore.binding(\.$count))
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .keyboardType(.numberPad)
                     Text("回")
                     Text("×")
-                    Picker("", selection: viewStore.binding(\.$setCount)) {
-                        ForEach(0...100, id: \.self) { count in
-                            Text("\(count)")
-                                .tag(count)
-                        }
-                    }
-                    .frame(width: 40)
+                    TextField("", text: viewStore.binding(\.$setCount))
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .keyboardType(.numberPad)
                     Text("セット")
                 }
                 TextField("メモ", text: viewStore.binding(\.$memo))

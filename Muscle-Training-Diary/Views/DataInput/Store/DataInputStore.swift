@@ -27,8 +27,9 @@ struct DataInputStore: ReducerProtocol {
         @BindingState var weight: String = ""
         @BindingState var memo: String = ""
         @BindingState var currentUnit: ValueUnit = .minutes
-        @BindingState var count: Int = 0
-        @BindingState var setCount: Int = 0
+        @BindingState var count: String = ""
+        @BindingState var setCount: String = ""
+
         var trainingNameValues: [String] = []
         @BindingState var trainingNameValueIndex: Int = 0
         var currentInputType: InputType {
@@ -73,14 +74,16 @@ struct DataInputStore: ReducerProtocol {
                     state.trainingName = state.trainingNameValues[state.trainingNameValueIndex]
                 }
                 guard state.trainingName != "" else { return .none }
-                guard state.count != 0 || state.weight != "" else { return .none }
-                guard let weight = Double(state.weight == "" ? "0" : state.weight ) else { return EffectTask(value: .alertDimiss) }
+                guard let weight = Double(state.weight == "" ? "0" : state.weight ),
+                      let count = Int(state.count == "" ? "0" : state.count),
+                      let setCount = Int(state.setCount == "" ? "0" : state.setCount)
+                else { return EffectTask(value: .alertDimiss) }
                 let trainingData = TrainingData(trainingDate: state.trainingDate,
                                                 trainingName: state.trainingName,
                                                 weight: weight,
                                                 valueUnit: state.currentUnit,
-                                                count: state.count,
-                                                setCount: state.setCount,
+                                                count: count,
+                                                setCount: setCount,
                                                 memo: state.memo)
                 return .task { [trainingData = trainingData] in
                         await .setTrainingDataResponse(TaskResult { try await firebaseClient.setTrainingData(trainingData) })
@@ -95,8 +98,8 @@ struct DataInputStore: ReducerProtocol {
                 state.weight = "\(trainingData.weight)"
                 state.memo = trainingData.memo
                 state.currentUnit = trainingData.valueUnit
-                state.count = trainingData.count
-                state.setCount = trainingData.setCount
+                state.count = "\(trainingData.count)"
+                state.setCount = "\(trainingData.setCount)"
                 state.trainingDate = trainingData.trainingDate
                 return .none
             case .updateInputType:
