@@ -40,6 +40,16 @@
 		860150DD29BF620C00F35836 /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860150DC29BF620C00F35836 /* FirebaseClient.swift */; };
 		860150DF29BF63CA00F35836 /* TrainingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860150DE29BF63CA00F35836 /* TrainingData.swift */; };
 		8601511F29C22A2C00F35836 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601511E29C22A2C00F35836 /* LoadState.swift */; };
+		860B219D29FEBB8700C3B880 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B219C29FEBB8700C3B880 /* Message.swift */; };
+		860B219F29FEBBE800C3B880 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B219E29FEBBE800C3B880 /* ChatView.swift */; };
+		860B21A429FECD3200C3B880 /* ChatStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B21A329FECD3200C3B880 /* ChatStore.swift */; };
+		860B21AB29FFA60D00C3B880 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 860B21A929FFA60D00C3B880 /* CoreDataModel.xcdatamodeld */; };
+		860B21B529FFAE1800C3B880 /* Chat+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B21B329FFAE1800C3B880 /* Chat+CoreDataClass.swift */; };
+		860B21B629FFAE1800C3B880 /* Chat+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B21B429FFAE1800C3B880 /* Chat+CoreDataProperties.swift */; };
+		860B21B829FFAFD500C3B880 /* ChatDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B21B729FFAFD500C3B880 /* ChatDataManager.swift */; };
+		860B21BA29FFBB0100C3B880 /* GptClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B21B929FFBB0100C3B880 /* GptClient.swift */; };
+		860B21BC2A001EB800C3B880 /* ChatAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B21BB2A001EB800C3B880 /* ChatAPI.swift */; };
+		860B21BF2A01693300C3B880 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 860B21BE2A01693300C3B880 /* Alamofire */; };
 		868CB29729DC08D90068E9A2 /* GridItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CB29629DC08D90068E9A2 /* GridItem+Extension.swift */; };
 		868CB29929DC09020068E9A2 /* GridStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CB29829DC09020068E9A2 /* GridStyle.swift */; };
 		868CB29B29DC12B70068E9A2 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CB29A29DC12B70068E9A2 /* UserDefaults+Extension.swift */; };
@@ -87,6 +97,15 @@
 		860150DC29BF620C00F35836 /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
 		860150DE29BF63CA00F35836 /* TrainingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingData.swift; sourceTree = "<group>"; };
 		8601511E29C22A2C00F35836 /* LoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
+		860B219C29FEBB8700C3B880 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		860B219E29FEBBE800C3B880 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		860B21A329FECD3200C3B880 /* ChatStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStore.swift; sourceTree = "<group>"; };
+		860B21AA29FFA60D00C3B880 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		860B21B329FFAE1800C3B880 /* Chat+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Chat+CoreDataClass.swift"; path = "Muscle-Training-Diary/Chat+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		860B21B429FFAE1800C3B880 /* Chat+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Chat+CoreDataProperties.swift"; path = "Muscle-Training-Diary/Chat+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		860B21B729FFAFD500C3B880 /* ChatDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataManager.swift; sourceTree = "<group>"; };
+		860B21B929FFBB0100C3B880 /* GptClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptClient.swift; sourceTree = "<group>"; };
+		860B21BB2A001EB800C3B880 /* ChatAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAPI.swift; sourceTree = "<group>"; };
 		868CB29629DC08D90068E9A2 /* GridItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GridItem+Extension.swift"; sourceTree = "<group>"; };
 		868CB29829DC09020068E9A2 /* GridStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStyle.swift; sourceTree = "<group>"; };
 		868CB29A29DC12B70068E9A2 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
@@ -98,6 +117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				860150D629BF5F7700F35836 /* FirebasePerformance in Frameworks */,
+				860B21BF2A01693300C3B880 /* Alamofire in Frameworks */,
 				860150C429BF5F7700F35836 /* FirebaseAnalytics in Frameworks */,
 				860150CA29BF5F7700F35836 /* FirebaseAuth in Frameworks */,
 				860150D829BF5F7700F35836 /* FirebaseRemoteConfig in Frameworks */,
@@ -205,6 +225,7 @@
 		8601508129BF5AF900F35836 /* Muscle-Training-Diary */ = {
 			isa = PBXGroup;
 			children = (
+				860B21A529FFA3E400C3B880 /* CoreData */,
 				868CB29529DC08C50068E9A2 /* Helpers */,
 				860150BF29BF5E2300F35836 /* Entities */,
 				860150B829BF5D4E00F35836 /* Views */,
@@ -245,7 +266,9 @@
 		860150B529BF5BB200F35836 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				860B21AC29FFA68A00C3B880 /* CoreData */,
 				860150DB29BF61FE00F35836 /* Client */,
+				860B21BB2A001EB800C3B880 /* ChatAPI.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -253,6 +276,7 @@
 		860150B829BF5D4E00F35836 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				860B219B29FEBB2C00C3B880 /* Chat */,
 				8601508429BF5AF900F35836 /* ContentView.swift */,
 				860019FA29D059AC000601CB /* DataInput */,
 				860019FE29D06599000601CB /* TrainingData */,
@@ -285,6 +309,7 @@
 				860150DE29BF63CA00F35836 /* TrainingData.swift */,
 				8601511E29C22A2C00F35836 /* LoadState.swift */,
 				860019F829D0089D000601CB /* ValueUnit.swift */,
+				860B219C29FEBB8700C3B880 /* Message.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -293,8 +318,44 @@
 			isa = PBXGroup;
 			children = (
 				860150DC29BF620C00F35836 /* FirebaseClient.swift */,
+				860B21B929FFBB0100C3B880 /* GptClient.swift */,
 			);
 			path = Client;
+			sourceTree = "<group>";
+		};
+		860B219B29FEBB2C00C3B880 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				860B21A029FECC6700C3B880 /* Store */,
+				860B219E29FEBBE800C3B880 /* ChatView.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		860B21A029FECC6700C3B880 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				860B21A329FECD3200C3B880 /* ChatStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		860B21A529FFA3E400C3B880 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				860B21B329FFAE1800C3B880 /* Chat+CoreDataClass.swift */,
+				860B21B429FFAE1800C3B880 /* Chat+CoreDataProperties.swift */,
+				860B21A929FFA60D00C3B880 /* CoreDataModel.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		860B21AC29FFA68A00C3B880 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				860B21B729FFAFD500C3B880 /* ChatDataManager.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		868CB29529DC08C50068E9A2 /* Helpers */ = {
@@ -338,6 +399,7 @@
 				860150D529BF5F7700F35836 /* FirebasePerformance */,
 				860150D729BF5F7700F35836 /* FirebaseRemoteConfig */,
 				860150D929BF5F7700F35836 /* FirebaseStorage */,
+				860B21BE2A01693300C3B880 /* Alamofire */,
 			);
 			productName = "Muscle-Training-Diary";
 			productReference = 8601507F29BF5AF900F35836 /* Muscle-Training-Diary.app */;
@@ -414,6 +476,7 @@
 			packageReferences = (
 				860150B229BF5B9200F35836 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				860150C229BF5F7700F35836 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				860B21BD2A01693300C3B880 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 8601508029BF5AF900F35836 /* Products */;
 			projectDirPath = "";
@@ -480,17 +543,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				860B219F29FEBBE800C3B880 /* ChatView.swift in Sources */,
+				860B21B529FFAE1800C3B880 /* Chat+CoreDataClass.swift in Sources */,
 				8601511F29C22A2C00F35836 /* LoadState.swift in Sources */,
 				868CB29929DC09020068E9A2 /* GridStyle.swift in Sources */,
+				860B21A429FECD3200C3B880 /* ChatStore.swift in Sources */,
 				86001A0429D14301000601CB /* ChartView.swift in Sources */,
+				860B21AB29FFA60D00C3B880 /* CoreDataModel.xcdatamodeld in Sources */,
+				860B219D29FEBB8700C3B880 /* Message.swift in Sources */,
 				86001A0729D1431B000601CB /* ChartStore.swift in Sources */,
 				86001A0129D065DA000601CB /* TrainingDataStore.swift in Sources */,
 				868CB29B29DC12B70068E9A2 /* UserDefaults+Extension.swift in Sources */,
 				860150BE29BF5D9700F35836 /* HomeStore.swift in Sources */,
 				860019F629CFC5C2000601CB /* DataInputView.swift in Sources */,
+				860B21B829FFAFD500C3B880 /* ChatDataManager.swift in Sources */,
+				860B21BA29FFBB0100C3B880 /* GptClient.swift in Sources */,
+				860B21BC2A001EB800C3B880 /* ChatAPI.swift in Sources */,
 				860019F929D0089D000601CB /* ValueUnit.swift in Sources */,
 				860019F429CFC552000601CB /* TrainingDataView.swift in Sources */,
 				860150BA29BF5D6B00F35836 /* HomeView.swift in Sources */,
+				860B21B629FFAE1800C3B880 /* Chat+CoreDataProperties.swift in Sources */,
 				860019FD29D059CE000601CB /* DataInputStore.swift in Sources */,
 				860150DD29BF620C00F35836 /* FirebaseClient.swift in Sources */,
 				860150DF29BF63CA00F35836 /* TrainingData.swift in Sources */,
@@ -654,7 +726,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202304121448;
+				CURRENT_PROJECT_VERSION = 202305022007;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Muscle-Training-Diary/Preview Content\"";
 				DEVELOPMENT_TEAM = 97TBWXLG65;
@@ -671,7 +743,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.4.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "hideto1198.Muscle-Training-Diary";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -687,7 +759,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202304121448;
+				CURRENT_PROJECT_VERSION = 202305022007;
 				DEVELOPMENT_ASSET_PATHS = "\"Muscle-Training-Diary/Preview Content\"";
 				DEVELOPMENT_TEAM = 97TBWXLG65;
 				ENABLE_PREVIEWS = YES;
@@ -703,7 +775,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.4.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "hideto1198.Muscle-Training-Diary";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -846,6 +918,14 @@
 				kind = branch;
 			};
 		};
+		860B21BD2A01693300C3B880 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -914,7 +994,25 @@
 			package = 860150C229BF5F7700F35836 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
 		};
+		860B21BE2A01693300C3B880 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 860B21BD2A01693300C3B880 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		860B21A929FFA60D00C3B880 /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				860B21AA29FFA60D00C3B880 /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 860B21AA29FFA60D00C3B880 /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8601507729BF5AF900F35836 /* Project object */;
 }
