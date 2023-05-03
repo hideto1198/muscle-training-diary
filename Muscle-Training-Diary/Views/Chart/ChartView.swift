@@ -98,10 +98,14 @@ struct ChartView: View {
                         }
                         if trainingData.count != 0 {
                             HStack {
-                                Text("\(trainingData.count)")
-                                Text(" × ")
-                                Text("\(trainingData.setCount)")
-                                Text("セット")
+                                Text("\(String(format: "%.2f", trainingData.count))")
+                                if trainingData.valueUnit == .minutes {
+                                    Text("km")
+                                } else {
+                                    Text(" × ")
+                                    Text("\(trainingData.setCount)")
+                                    Text("セット")
+                                }
                             }
                         }
                     }

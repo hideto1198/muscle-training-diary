@@ -76,16 +76,25 @@ struct DataInputView: View {
                         }
                     }
                 }
-                HStack {
-                    TextField("", text: viewStore.binding(\.$count))
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .keyboardType(.numberPad)
-                    Text("回")
-                    Text("×")
-                    TextField("", text: viewStore.binding(\.$setCount))
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .keyboardType(.numberPad)
-                    Text("セット")
+                if viewStore.currentUnit == .kilogram {
+                    HStack {
+                        TextField("", text: viewStore.binding(\.$count))
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .keyboardType(.numberPad)
+                        Text("回")
+                        Text("×")
+                        TextField("", text: viewStore.binding(\.$setCount))
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .keyboardType(.numberPad)
+                        Text("セット")
+                    }
+                } else {
+                    HStack {
+                        TextField("", text: viewStore.binding(\.$count))
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .keyboardType(.decimalPad)
+                        Text("km")
+                    }
                 }
                 TextField("メモ", text: viewStore.binding(\.$memo))
                     .textFieldStyle(RoundedBorderTextFieldStyle())
