@@ -25,6 +25,13 @@ struct HomeView: View {
                             Image(systemName: "chart.line.uptrend.xyaxis")
                             Text("グラフ")
                         }
+                    if UserDefaults.standard.string(forKey: "userId") == "12E4EBF9-A4AF-4D95-9FF1-E2D6E27E49C4" {
+                        chat
+                            .tabItem {
+                                Image(systemName: "message")
+                                Text("チャット")
+                            }
+                    }
                 }
                 if viewStore.loadState == .loading {
                     ProgressView("通信中")
@@ -36,6 +43,10 @@ struct HomeView: View {
             }
         }
 
+    }
+
+    private var chat: some View {
+        ChatView(store: store.scope(state: \.chatState, action: HomeStore.Action.chatAction))
     }
 
     @State private var gridHeight: CGFloat = .zero

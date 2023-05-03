@@ -19,6 +19,7 @@ struct HomeStore: ReducerProtocol {
         var dataInputState: DataInputStore.State?
         var dataEditState: DataInputStore.State?
         var trainingDataState = TrainingDataStore.State()
+        var chatState = ChatStore.State()
         var chartState: ChartStore.State?
         var isSheetPresented: Bool { chartState !=  nil }
 
@@ -42,6 +43,7 @@ struct HomeStore: ReducerProtocol {
         case dataInputAction(DataInputStore.Action)
         case dataEditAction(DataInputStore.Action)
         case trainingDataAction(TrainingDataStore.Action)
+        case chatAction(ChatStore.Action)
         case chartAction(ChartStore.Action)
         case setColumns(GridStyle)
         case setSortStyle(ComparisonResult)
@@ -55,6 +57,9 @@ struct HomeStore: ReducerProtocol {
         Scope(state: \.trainingDataState, action: /Action.trainingDataAction) {
             TrainingDataStore()
         }
+        Scope(state: \.chatState, action: /Action.chatAction) {
+            ChatStore()
+        }
         Reduce { state, action in
             switch action {
             case .binding:
@@ -66,7 +71,10 @@ struct HomeStore: ReducerProtocol {
                 if let sortPattern = UserDefaults.standard.decodedObject(ComparisonResult.self, forKey: "sortPattern") {
                     state.sortPattern = sortPattern
                 }
-                return EffectTask(value: .fetchTrainingData)
+                return .merge(
+                    EffectTask(value: .fetchTrainingData),
+                    EffectTask(value: .chatAction(.onAppear))
+                )
             case .showAlert:
                 state.dataInputState = DataInputStore.State(trainingNameValues: Array(Set(state.trainingDatas.map{ $0.trainingName })).sorted())
                 return .none
@@ -129,6 +137,8 @@ struct HomeStore: ReducerProtocol {
             case .trainingDataAction:
                 return .none
             case .chartAction:
+                return .none
+            case .chatAction:
                 return .none
             }
         }
