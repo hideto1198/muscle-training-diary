@@ -47,7 +47,7 @@ extension FirebaseClient: DependencyKey {
                         trainingName: $0.data()["TRAINING_NAME"] as? String ?? "",
                         weight: $0.data()["WEIGHT"] as? Double ?? 0.0,
                         valueUnit: ValueUnit.type(unitString: $0.data()["VALUE_UNIT"] as? String ?? "分"),
-                        count: $0.data()["COUNT"] as? Int ?? 0,
+                        count: $0.data()["COUNT"] as? Double ?? 0,
                         setCount: $0.data()["SET_COUNT"] as? Int ?? 0,
                         memo: $0.data()["MEMO"] as? String ?? ""
                     )

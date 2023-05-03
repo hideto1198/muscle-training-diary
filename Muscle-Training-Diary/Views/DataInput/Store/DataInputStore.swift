@@ -75,7 +75,7 @@ struct DataInputStore: ReducerProtocol {
                 }
                 guard state.trainingName != "" else { return .none }
                 guard let weight = Double(state.weight == "" ? "0" : state.weight ),
-                      let count = Int(state.count == "" ? "0" : state.count),
+                      let count = Double(state.count == "" ? "0" : state.count),
                       let setCount = Int(state.setCount == "" ? "0" : state.setCount)
                 else { return EffectTask(value: .alertDimiss) }
                 let trainingData = TrainingData(trainingDate: state.trainingDate,

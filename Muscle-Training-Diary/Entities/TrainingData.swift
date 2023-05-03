@@ -20,13 +20,18 @@ struct TrainingData: Equatable, Identifiable, Hashable {
     }
 
     var value: Double {
-        (weight == 0.0 ? 1 : weight) * Double(count == 0 ? 1 : count) *  Double(setCount == 0 ? 1 : setCount)
+        if valueUnit == .minutes {
+            return Double(count)
+        } else {
+            return (weight == 0.0 ? 1 : weight) * Double(count == 0 ? 1 : count) *  Double(setCount == 0 ? 1 : setCount)
+        }
     }
+
     var trainingDate: String?
     var trainingName: String
     var weight: Double
     var valueUnit: ValueUnit
-    var count: Int
+    var count: Double
     var setCount: Int
     var memo: String
 }
