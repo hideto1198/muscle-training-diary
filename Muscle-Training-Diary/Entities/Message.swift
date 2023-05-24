@@ -7,10 +7,17 @@
 
 import Foundation
 
-struct Message: Identifiable, Equatable {
+struct Message: Identifiable, Equatable, Codable {
     var id = UUID()
     var userName: String
     var messageText: String
     var timestamp: Date
     var isSelf: Bool = false
+
+    var toDict: Dictionary<String, Any> {
+        [
+            "role": isSelf ? "user" : "assistant",
+            "content": messageText
+        ]
+    }
 }
