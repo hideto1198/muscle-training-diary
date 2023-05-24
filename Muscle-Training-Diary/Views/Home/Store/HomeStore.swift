@@ -22,7 +22,8 @@ struct HomeStore: ReducerProtocol {
         var chatState = ChatStore.State()
         var chartState: ChartStore.State?
         var isSheetPresented: Bool { chartState !=  nil }
-
+        var homeWatchConnection = HomeWatchConnection()
+        
         var trainingDatas: [TrainingData] {
             get { trainingDataState.trainingDatas }
             set { trainingDataState.trainingDatas = newValue }
@@ -48,6 +49,9 @@ struct HomeStore: ReducerProtocol {
         case setColumns(GridStyle)
         case setSortStyle(ComparisonResult)
         case onEdit(TrainingData)
+        case listen
+        case listenedValue(TaskResult<[Message]>)
+        case sendToWatch
     }
 
     @Dependency(\.firebaseClient) var firebaseClient
@@ -73,8 +77,22 @@ struct HomeStore: ReducerProtocol {
                 }
                 return .merge(
                     EffectTask(value: .fetchTrainingData),
-                    EffectTask(value: .chatAction(.onAppear))
+                    EffectTask(value: .chatAction(.onAppear)),
+                    EffectTask(value: .listen)
                 )
+            case .listen:
+                return .run { send in
+                    for try await value in try await firebaseClient.listen() {
+                        await send(.listenedValue(.success(value)))
+                    }
+                } catch: { error, send in
+                    await send(.listenedValue(.failure(error)))
+                }
+            case .listenedValue(.success(let values)):
+                return EffectTask(value: .chatAction(.receive(values)))
+            case .listenedValue(.failure(let error)):
+                print(error)
+                return .none
             case .showAlert:
                 state.dataInputState = DataInputStore.State(trainingNameValues: Array(Set(state.trainingDatas.map{ $0.trainingName })).sorted())
                 return .none
@@ -90,6 +108,17 @@ struct HomeStore: ReducerProtocol {
                     trainingDatas: state.trainingDatas,
                     trainingNames: Array(Set(state.trainingDatas.map{ $0.trainingName }))
                 )
+                return EffectTask(value: .sendToWatch)
+            case .sendToWatch:
+                var sendData: [String: [[String: Any]]] = [:]
+                let currentDatas = state.trainingDatas
+                let groupedDatas = Dictionary(grouping: currentDatas) { data -> String in
+                    data.trainingName
+                }
+                groupedDatas.forEach {
+                    sendData[$0.key] = $0.value.map { $0.toDict }
+                }
+                state.homeWatchConnection.sendData(trainingData: sendData)
                 return .none
             case .fetchTrainingDataResponse(.failure):
                 state.loadState = .none
@@ -151,5 +180,26 @@ struct HomeStore: ReducerProtocol {
         .ifLet(\.chartState, action: /Action.chartAction) {
             ChartStore()
         }
+    }
+}
+
+extension HomeStore {
+    private func sorted(trainingDatas: [TrainingData]) -> Array<String> {
+        var result: [String] = []
+        result = Array(Set(trainingDatas.map { $0.trainingDate!.components(separatedBy: " ")[0] }))
+        result = result.sorted(by: { compare($0, $1) })
+        return result
+    }
+
+    private func compare(_ ldate: String, _ rdate: String) -> Bool {
+        var dateFormatter: DateFormatter {
+            let dateFormatter: DateFormatter = DateFormatter()
+            dateFormatter.calendar = Calendar(identifier: .gregorian)
+            dateFormatter.dateFormat = "yyyy年MM月dd日"
+            dateFormatter.locale = Locale(identifier: "ja_JP")
+            return dateFormatter
+        }
+
+        return dateFormatter.date(from: ldate)! <= dateFormatter.date(from: rdate)!
     }
 }
