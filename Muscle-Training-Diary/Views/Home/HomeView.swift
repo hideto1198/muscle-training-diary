@@ -20,6 +20,9 @@ struct HomeView: View {
                             Image(systemName: "house")
                             Text("ホーム")
                         }
+                        .onAppear {
+                            viewStore.send(.onAppear)
+                        }
                     chart
                         .tabItem {
                             Image(systemName: "chart.line.uptrend.xyaxis")
@@ -37,9 +40,6 @@ struct HomeView: View {
                     ProgressView("通信中")
                         .progressViewStyle(CircularProgressViewStyle())
                 }
-            }
-            .onAppear {
-                viewStore.send(.onAppear)
             }
         }
 
