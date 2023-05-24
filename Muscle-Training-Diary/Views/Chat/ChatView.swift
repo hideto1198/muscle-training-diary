@@ -42,6 +42,13 @@ struct ChatView: View {
             HStack {
                 Text("チャットBot")
                     .font(.title2)
+                Button(
+                    action: {
+                        viewStore.send(.send)
+                    }
+                ) {
+                    Text("送信")
+                }
                 Spacer()
                 Button(
                     action: {
@@ -138,17 +145,19 @@ struct MessageInputView: View {
             }
 
             Button(action: sendMessage) {
-                Image(systemName: "arrow.up.circle.fill")
-                    .resizable()
-                    .frame(width: 25, height: 25)
-                    .foregroundColor(.blue)
+                ZStack {
+                    Color("backColor")
+                        .frame(width: 40, height: 40)
+                    Image(systemName: "arrow.up.circle.fill")
+                        .resizable()
+                        .frame(width: 25, height: 25)
+                        .foregroundColor(.blue)
+                }
             }
-            .padding(.horizontal, 10)
-            .clipShape(Circle())
-            .disabled(
-                messageText.isEmpty)
+            .padding(.trailing, 10)
+            .disabled(messageText.isEmpty)
         }
-        .padding()
+        .padding([.bottom, .horizontal])
     }
 }
 
@@ -160,11 +169,18 @@ struct MessageRow: View {
             if message.isSelf {
                 Spacer()
             }
-            Text(message.messageText)
-                .padding(10)
-                .background(message.isSelf ? Color.blue : Color.gray)
-                .foregroundColor(.white)
-                .clipShape(BubbleShape(isSelf: message.isSelf))
+            VStack(alignment: .leading, spacing: 2) {
+                if message.userName != "me" {
+                    Text(message.userName)
+                        .font(.system(size: 15))
+                }
+                Text(message.messageText)
+                    .padding(10)
+                    .background(message.isSelf ? Color.blue : Color.gray)
+                    .foregroundColor(.white)
+                    .clipShape(BubbleShape(isSelf: message.isSelf))
+                    .textSelection(.enabled)
+            }
             if !message.isSelf {
                 Spacer()
             }

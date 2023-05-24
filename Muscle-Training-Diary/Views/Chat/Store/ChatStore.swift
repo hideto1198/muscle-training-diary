@@ -27,6 +27,11 @@ struct ChatStore: ReducerProtocol {
         case chunk(String)
         case complete
         case delete
+        case save(Message)
+        case saveCompletaion(TaskResult<Bool>)
+        case receive([Message])
+        case send
+        case sendResponse(TaskResult<Bool>)
     }
 
     @Dependency(\.gptClient) var gptClient
@@ -38,7 +43,7 @@ struct ChatStore: ReducerProtocol {
             case .onAppear:
                 let message = ChatDataManager.shared.getMessages()
                 message.forEach {
-                    state.messages.append(.init(userName: "",
+                    state.messages.append(.init(userName: $0.userName ?? "",
                                                 messageText: $0.messageText ?? "",
                                                 timestamp: $0.timestamp ?? Date(),
                                                 isSelf: $0.isSelf))
@@ -46,31 +51,30 @@ struct ChatStore: ReducerProtocol {
                 return .none
             case .push:
                 if state.newMessage.isEmpty { return .none }
-                let timestamp = Date()
+                let message: Message = .init(userName: "me",
+                                            messageText: state.newMessage,
+                                            timestamp: Date(),
+                                            isSelf: true)
+                state.messages.append(message)
+                ChatDataManager.shared.save(message: message)
                 state.messages.append(
-                    .init(userName: "",
-                          messageText: state.newMessage,
-                          timestamp: timestamp,
-                          isSelf: true)
-                )
-                ChatDataManager.shared.save(message: .init(userName: "",
-                                                           messageText: state.newMessage,
-                                                           timestamp: Date(),
-                                                           isSelf: true))
-                state.messages.append(
-                    .init(userName: "",
+                    .init(userName: "bot",
                           messageText: "",
-                          timestamp: timestamp)
+                          timestamp: Date())
                 )
                 withAnimation {
                     NotificationCenter.default.post(name: NSNotification.scrollToBottom, object: nil, userInfo: nil)
                 }
-                return EffectTask(value: .fetchCompletion)
+                return .merge(
+                    .run { [message = message] send in
+                        await send(.save(message))
+                    },
+                    EffectTask(value: .fetchCompletion)
+                )
             case .fetchCompletion:
-                let message = state.newMessage
                 state.newMessage = ""
-                return .run { [message = message] send in
-                    for try await streamEvent in try await gptClient.completion(message) {
+                return .run { [messages = state.messages.suffix(10).map { $0 }] send in
+                    for try await streamEvent in try await gptClient.completion(messages) {
                         switch streamEvent {
                         case .stream(let block):
                             await send(.chunk(block))
@@ -90,11 +94,37 @@ struct ChatStore: ReducerProtocol {
                 }
                 if let lastIndex = state.messages.lastIndex(of: state.messages.last!) {
                     ChatDataManager.shared.save(message: state.messages[lastIndex])
+                    return .run { [message = state.messages[lastIndex]] send in
+                        await send(.save(message))
+                    }
                 }
                 return .none
             case .delete:
                 state.messages.removeAll()
                 ChatDataManager.shared.delete()
+                return .none
+            case .save(let message):
+                return .task { [message = message] in
+                    await .saveCompletaion(TaskResult { try await gptClient.save(message) })
+                }
+            case .saveCompletaion(.success(_)):
+                return .none
+            case .saveCompletaion(.failure):
+                return .none
+            case .receive(let messages):
+                state.messages += messages
+                messages.forEach {
+                    ChatDataManager.shared.save(message: $0)
+                }
+                withAnimation {
+                    NotificationCenter.default.post(name: NSNotification.scrollToBottom, object: nil, userInfo: nil)
+                }
+                return .none
+            case .send:
+                return .task {
+                    await .sendResponse(TaskResult { try await gptClient.send() })
+                }
+            case .sendResponse:
                 return .none
             case .binding:
                 return .none
