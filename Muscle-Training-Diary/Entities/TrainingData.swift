@@ -34,4 +34,27 @@ struct TrainingData: Equatable, Identifiable, Hashable {
     var count: Double
     var setCount: Int
     var memo: String
+
+    var toDict: [String: Any] {
+        return [
+            "trainingDate": trainingDate ?? "",
+            "trainingName": trainingName,
+            "weight": weight,
+            "valueUnit": valueUnit.label,
+            "count": count,
+            "setCount": setCount,
+            "memo": memo
+        ]
+    }
+
+    static func fromDict(dict: [String: Any]) -> Self {
+        return TrainingData(
+            trainingDate: dict["trainingDate"] as? String,
+            trainingName: dict["trainingName"]! as! String,
+            weight: dict["weight"]! as! Double,
+            valueUnit: ValueUnit.type(unitString: dict["valueUnit"] as! String),
+            count: dict["count"]! as! Double,
+            setCount: dict["setCount"]! as! Int,
+            memo: dict["memo"]! as! String)
+    }
 }
