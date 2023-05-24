@@ -20,7 +20,7 @@ extension Chat {
     @NSManaged public var messageText: String?
     @NSManaged public var timestamp: Date?
     @NSManaged public var isSelf: Bool
-
+    @NSManaged public var userName: String?
 }
 
 extension Chat : Identifiable {

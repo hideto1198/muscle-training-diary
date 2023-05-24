@@ -24,6 +24,7 @@ class ChatDataManager {
     func save(message: Message) {
         let context = container.viewContext
         let chatMessage = Chat(context: context)
+        chatMessage.userName = message.userName
         chatMessage.messageText = message.messageText
         chatMessage.isSelf = message.isSelf
         chatMessage.timestamp = Date()

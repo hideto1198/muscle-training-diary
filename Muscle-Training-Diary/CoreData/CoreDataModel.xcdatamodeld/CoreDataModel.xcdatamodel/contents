@@ -5,5 +5,6 @@
         <attribute name="isSelf" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="messageText" optional="YES" attributeType="String"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="userName" optional="YES" attributeType="String"/>
     </entity>
 </model>
