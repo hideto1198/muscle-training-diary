@@ -55,10 +55,17 @@ struct ContentView: View {
                 ForEach(manager.trainingData[manager.activityName]?.filter({ $0.trainingDate!.contains(manager.trainingDate) }).sorted(by: { $0.weight > $1.weight }) ?? [], id: \.self) { data in
                     VStack(alignment: .leading) {
                         if (data.weight != 0.0) {
-                            HStack {
-                                Text(String(format: "%.2f", data.weight))
-                                Text(data.valueUnit.label)
-                            }.bold()
+                            if #available(watchOS 9.0, *) {
+                                HStack {
+                                    Text(String(format: "%.2f", data.weight))
+                                    Text(data.valueUnit.label)
+                                }.bold()
+                            } else {
+                                HStack {
+                                    Text(String(format: "%.2f", data.weight))
+                                    Text(data.valueUnit.label)
+                                }
+                            }
                         }
                         if (data.setCount != 0) {
                             HStack {
