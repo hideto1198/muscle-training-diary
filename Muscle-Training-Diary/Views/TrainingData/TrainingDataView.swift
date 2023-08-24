@@ -61,7 +61,7 @@ struct TrainingDataView: View {
             if data.count == 0 {
                 EmptyView()
             } else {
-                Text("\(data.count) × \(data.setCount)セット")
+                Text("\(String(format: "%.2f", data.count)) × \(data.setCount)セット")
                     .font(.system(size: 20, weight: .black))
             }
         }

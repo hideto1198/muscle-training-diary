@@ -19,6 +19,8 @@ struct ChartStore: ReducerProtocol {
         var selectedItems: [TrainingData]?
         var annotationPosition: AnnotationPosition = .leading
         var groupedDatas: [String: [TrainingData]] = [:]
+        @BindingState var dateFrom: String = ""
+        @BindingState var dateTo: String = ""
     }
 
     enum Action: BindableAction, Equatable {
@@ -60,7 +62,7 @@ struct ChartStore: ReducerProtocol {
                 state.selectedItem = state.trainingDatas.first(where: { $0.trainingDate == date })
                 let currentDatas = state.trainingDatas.filter { $0.trainingName == state.trainingNames[state.trainingNameIndex] }
                 state.selectedItems = currentDatas.filter { $0.trainingDate!.contains(date) }
-                if Array(state.groupedDatas.keys.map { String($0) }).sorted(by: { compare($0, $1) }).firstIndex(of: date)! < state.groupedDatas.keys.count  / 2 {
+                if Array(state.groupedDatas.keys.map { String($0) }).sorted(by: { compare($0, $1) }).filter({ compare(state.dateFrom, $0) && compare($0, state.dateTo) }).firstIndex(of: date)! < Array(state.groupedDatas.keys.map { String($0) }).sorted(by: { compare($0, $1) }).filter({ compare(state.dateFrom, $0) && compare($0, state.dateTo) }).count  / 2 {
                     state.annotationPosition = .trailing
                 } else {
                     state.annotationPosition = .leading
@@ -83,6 +85,15 @@ struct ChartStore: ReducerProtocol {
                     }
                 groupedDatas.forEach {
                     state.groupedDatas[$0.key] = $0.value
+                }
+                let sortedDateList = Array(state.groupedDatas.keys.map { String($0) }).sorted { compare($1, $0) }
+                if sortedDateList.isEmpty { return .none }
+                if sortedDateList.count > 7 {
+                    state.dateFrom = sortedDateList[6]
+                    state.dateTo = sortedDateList.first!
+                } else {
+                    state.dateFrom = sortedDateList.last!
+                    state.dateTo = sortedDateList.first!
                 }
                 return .none
             }
@@ -107,7 +118,6 @@ extension ChartStore {
             return dateFormatter
         }
 
-        return dateFormatter.date(from: ldate)?.compare(dateFormatter.date(from: rdate)!) == .orderedAscending
+        return dateFormatter.date(from: ldate)! <= dateFormatter.date(from: rdate)!
     }
-
 }

@@ -40,9 +40,32 @@
 		860150DD29BF620C00F35836 /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860150DC29BF620C00F35836 /* FirebaseClient.swift */; };
 		860150DF29BF63CA00F35836 /* TrainingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860150DE29BF63CA00F35836 /* TrainingData.swift */; };
 		8601511F29C22A2C00F35836 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601511E29C22A2C00F35836 /* LoadState.swift */; };
+		860B219D29FEBB8700C3B880 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B219C29FEBB8700C3B880 /* Message.swift */; };
+		860B219F29FEBBE800C3B880 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B219E29FEBBE800C3B880 /* ChatView.swift */; };
+		860B21A429FECD3200C3B880 /* ChatStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B21A329FECD3200C3B880 /* ChatStore.swift */; };
+		860B21AB29FFA60D00C3B880 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 860B21A929FFA60D00C3B880 /* CoreDataModel.xcdatamodeld */; };
+		860B21B529FFAE1800C3B880 /* Chat+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B21B329FFAE1800C3B880 /* Chat+CoreDataClass.swift */; };
+		860B21B629FFAE1800C3B880 /* Chat+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B21B429FFAE1800C3B880 /* Chat+CoreDataProperties.swift */; };
+		860B21B829FFAFD500C3B880 /* ChatDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B21B729FFAFD500C3B880 /* ChatDataManager.swift */; };
+		860B21BA29FFBB0100C3B880 /* GptClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B21B929FFBB0100C3B880 /* GptClient.swift */; };
+		860B21BC2A001EB800C3B880 /* ChatAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B21BB2A001EB800C3B880 /* ChatAPI.swift */; };
+		860B21BF2A01693300C3B880 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 860B21BE2A01693300C3B880 /* Alamofire */; };
 		868CB29729DC08D90068E9A2 /* GridItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CB29629DC08D90068E9A2 /* GridItem+Extension.swift */; };
 		868CB29929DC09020068E9A2 /* GridStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CB29829DC09020068E9A2 /* GridStyle.swift */; };
 		868CB29B29DC12B70068E9A2 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CB29A29DC12B70068E9A2 /* UserDefaults+Extension.swift */; };
+		8699D8D52A1E080D003D06D3 /* Muscle_Training_Diary_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699D8D42A1E080D003D06D3 /* Muscle_Training_Diary_WatchApp.swift */; };
+		8699D8D72A1E080D003D06D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699D8D62A1E080D003D06D3 /* ContentView.swift */; };
+		8699D8D92A1E080E003D06D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8699D8D82A1E080E003D06D3 /* Assets.xcassets */; };
+		8699D8DC2A1E080E003D06D3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8699D8DB2A1E080E003D06D3 /* Preview Assets.xcassets */; };
+		8699D8E62A1E080E003D06D3 /* Muscle_Training_Diary_Watch_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699D8E52A1E080E003D06D3 /* Muscle_Training_Diary_Watch_Watch_AppTests.swift */; };
+		8699D8F02A1E080E003D06D3 /* Muscle_Training_Diary_Watch_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699D8EF2A1E080E003D06D3 /* Muscle_Training_Diary_Watch_Watch_AppUITests.swift */; };
+		8699D8F22A1E080E003D06D3 /* Muscle_Training_Diary_Watch_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699D8F12A1E080E003D06D3 /* Muscle_Training_Diary_Watch_Watch_AppUITestsLaunchTests.swift */; };
+		8699D8F52A1E080E003D06D3 /* Muscle-Training-Diary-Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8699D8D22A1E080D003D06D3 /* Muscle-Training-Diary-Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		86D93A442A1E0AFF00E4516D /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D93A422A1E0AFF00E4516D /* ComplicationController.swift */; };
+		86D93A452A1E0AFF00E4516D /* WatchConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D93A432A1E0AFF00E4516D /* WatchConnection.swift */; };
+		86D93A462A1E0B2700E4516D /* TrainingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860150DE29BF63CA00F35836 /* TrainingData.swift */; };
+		86D93A472A1E0B4200E4516D /* ValueUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860019F829D0089D000601CB /* ValueUnit.swift */; };
+		86D93A492A1E0B9900E4516D /* HomeWatchConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D93A482A1E0B9900E4516D /* HomeWatchConnection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +83,42 @@
 			remoteGlobalIDString = 8601507E29BF5AF900F35836;
 			remoteInfo = "Muscle-Training-Diary";
 		};
+		8699D8E22A1E080E003D06D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8601507729BF5AF900F35836 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8699D8D12A1E080D003D06D3;
+			remoteInfo = "Muscle-Training-Diary-Watch Watch App";
+		};
+		8699D8EC2A1E080E003D06D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8601507729BF5AF900F35836 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8699D8D12A1E080D003D06D3;
+			remoteInfo = "Muscle-Training-Diary-Watch Watch App";
+		};
+		8699D8F32A1E080E003D06D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8601507729BF5AF900F35836 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8699D8D12A1E080D003D06D3;
+			remoteInfo = "Muscle-Training-Diary-Watch Watch App";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8699D8F92A1E080E003D06D3 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				8699D8F52A1E080E003D06D3 /* Muscle-Training-Diary-Watch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		860019F329CFC552000601CB /* TrainingDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingDataView.swift; sourceTree = "<group>"; };
@@ -87,9 +145,31 @@
 		860150DC29BF620C00F35836 /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
 		860150DE29BF63CA00F35836 /* TrainingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingData.swift; sourceTree = "<group>"; };
 		8601511E29C22A2C00F35836 /* LoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
+		860B219C29FEBB8700C3B880 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		860B219E29FEBBE800C3B880 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		860B21A329FECD3200C3B880 /* ChatStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStore.swift; sourceTree = "<group>"; };
+		860B21AA29FFA60D00C3B880 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		860B21B329FFAE1800C3B880 /* Chat+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Chat+CoreDataClass.swift"; path = "Muscle-Training-Diary/Chat+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		860B21B429FFAE1800C3B880 /* Chat+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Chat+CoreDataProperties.swift"; path = "Muscle-Training-Diary/Chat+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		860B21B729FFAFD500C3B880 /* ChatDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataManager.swift; sourceTree = "<group>"; };
+		860B21B929FFBB0100C3B880 /* GptClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptClient.swift; sourceTree = "<group>"; };
+		860B21BB2A001EB800C3B880 /* ChatAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAPI.swift; sourceTree = "<group>"; };
 		868CB29629DC08D90068E9A2 /* GridItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GridItem+Extension.swift"; sourceTree = "<group>"; };
 		868CB29829DC09020068E9A2 /* GridStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStyle.swift; sourceTree = "<group>"; };
 		868CB29A29DC12B70068E9A2 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		8699D8D22A1E080D003D06D3 /* Muscle-Training-Diary-Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Muscle-Training-Diary-Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8699D8D42A1E080D003D06D3 /* Muscle_Training_Diary_WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muscle_Training_Diary_WatchApp.swift; sourceTree = "<group>"; };
+		8699D8D62A1E080D003D06D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8699D8D82A1E080E003D06D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8699D8DB2A1E080E003D06D3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8699D8E12A1E080E003D06D3 /* Muscle-Training-Diary-Watch Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Muscle-Training-Diary-Watch Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8699D8E52A1E080E003D06D3 /* Muscle_Training_Diary_Watch_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muscle_Training_Diary_Watch_Watch_AppTests.swift; sourceTree = "<group>"; };
+		8699D8EB2A1E080E003D06D3 /* Muscle-Training-Diary-Watch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Muscle-Training-Diary-Watch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8699D8EF2A1E080E003D06D3 /* Muscle_Training_Diary_Watch_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muscle_Training_Diary_Watch_Watch_AppUITests.swift; sourceTree = "<group>"; };
+		8699D8F12A1E080E003D06D3 /* Muscle_Training_Diary_Watch_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muscle_Training_Diary_Watch_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		86D93A422A1E0AFF00E4516D /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		86D93A432A1E0AFF00E4516D /* WatchConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchConnection.swift; sourceTree = "<group>"; };
+		86D93A482A1E0B9900E4516D /* HomeWatchConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeWatchConnection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				860150D629BF5F7700F35836 /* FirebasePerformance in Frameworks */,
+				860B21BF2A01693300C3B880 /* Alamofire in Frameworks */,
 				860150C429BF5F7700F35836 /* FirebaseAnalytics in Frameworks */,
 				860150CA29BF5F7700F35836 /* FirebaseAuth in Frameworks */,
 				860150D829BF5F7700F35836 /* FirebaseRemoteConfig in Frameworks */,
@@ -121,6 +202,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8601509C29BF5AFA00F35836 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8699D8CF2A1E080D003D06D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8699D8DE2A1E080E003D06D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8699D8E82A1E080E003D06D3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -188,6 +290,9 @@
 				8601508129BF5AF900F35836 /* Muscle-Training-Diary */,
 				8601509829BF5AFA00F35836 /* Muscle-Training-DiaryTests */,
 				860150A229BF5AFA00F35836 /* Muscle-Training-DiaryUITests */,
+				8699D8D32A1E080D003D06D3 /* Muscle-Training-Diary-Watch Watch App */,
+				8699D8E42A1E080E003D06D3 /* Muscle-Training-Diary-Watch Watch AppTests */,
+				8699D8EE2A1E080E003D06D3 /* Muscle-Training-Diary-Watch Watch AppUITests */,
 				8601508029BF5AF900F35836 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -198,6 +303,9 @@
 				8601507F29BF5AF900F35836 /* Muscle-Training-Diary.app */,
 				8601509529BF5AFA00F35836 /* Muscle-Training-DiaryTests.xctest */,
 				8601509F29BF5AFA00F35836 /* Muscle-Training-DiaryUITests.xctest */,
+				8699D8D22A1E080D003D06D3 /* Muscle-Training-Diary-Watch Watch App.app */,
+				8699D8E12A1E080E003D06D3 /* Muscle-Training-Diary-Watch Watch AppTests.xctest */,
+				8699D8EB2A1E080E003D06D3 /* Muscle-Training-Diary-Watch Watch AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,6 +313,7 @@
 		8601508129BF5AF900F35836 /* Muscle-Training-Diary */ = {
 			isa = PBXGroup;
 			children = (
+				860B21A529FFA3E400C3B880 /* CoreData */,
 				868CB29529DC08C50068E9A2 /* Helpers */,
 				860150BF29BF5E2300F35836 /* Entities */,
 				860150B829BF5D4E00F35836 /* Views */,
@@ -245,7 +354,9 @@
 		860150B529BF5BB200F35836 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				860B21AC29FFA68A00C3B880 /* CoreData */,
 				860150DB29BF61FE00F35836 /* Client */,
+				860B21BB2A001EB800C3B880 /* ChatAPI.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -253,6 +364,7 @@
 		860150B829BF5D4E00F35836 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				860B219B29FEBB2C00C3B880 /* Chat */,
 				8601508429BF5AF900F35836 /* ContentView.swift */,
 				860019FA29D059AC000601CB /* DataInput */,
 				860019FE29D06599000601CB /* TrainingData */,
@@ -274,6 +386,7 @@
 		860150BC29BF5D8B00F35836 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				86D93A482A1E0B9900E4516D /* HomeWatchConnection.swift */,
 				860150BD29BF5D9700F35836 /* HomeStore.swift */,
 			);
 			path = Store;
@@ -285,6 +398,7 @@
 				860150DE29BF63CA00F35836 /* TrainingData.swift */,
 				8601511E29C22A2C00F35836 /* LoadState.swift */,
 				860019F829D0089D000601CB /* ValueUnit.swift */,
+				860B219C29FEBB8700C3B880 /* Message.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -293,8 +407,44 @@
 			isa = PBXGroup;
 			children = (
 				860150DC29BF620C00F35836 /* FirebaseClient.swift */,
+				860B21B929FFBB0100C3B880 /* GptClient.swift */,
 			);
 			path = Client;
+			sourceTree = "<group>";
+		};
+		860B219B29FEBB2C00C3B880 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				860B21A029FECC6700C3B880 /* Store */,
+				860B219E29FEBBE800C3B880 /* ChatView.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		860B21A029FECC6700C3B880 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				860B21A329FECD3200C3B880 /* ChatStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		860B21A529FFA3E400C3B880 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				860B21B329FFAE1800C3B880 /* Chat+CoreDataClass.swift */,
+				860B21B429FFAE1800C3B880 /* Chat+CoreDataProperties.swift */,
+				860B21A929FFA60D00C3B880 /* CoreDataModel.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		860B21AC29FFA68A00C3B880 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				860B21B729FFAFD500C3B880 /* ChatDataManager.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		868CB29529DC08C50068E9A2 /* Helpers */ = {
@@ -305,6 +455,44 @@
 				868CB29829DC09020068E9A2 /* GridStyle.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8699D8D32A1E080D003D06D3 /* Muscle-Training-Diary-Watch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				86D93A422A1E0AFF00E4516D /* ComplicationController.swift */,
+				86D93A432A1E0AFF00E4516D /* WatchConnection.swift */,
+				8699D8D42A1E080D003D06D3 /* Muscle_Training_Diary_WatchApp.swift */,
+				8699D8D62A1E080D003D06D3 /* ContentView.swift */,
+				8699D8D82A1E080E003D06D3 /* Assets.xcassets */,
+				8699D8DA2A1E080E003D06D3 /* Preview Content */,
+			);
+			path = "Muscle-Training-Diary-Watch Watch App";
+			sourceTree = "<group>";
+		};
+		8699D8DA2A1E080E003D06D3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8699D8DB2A1E080E003D06D3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8699D8E42A1E080E003D06D3 /* Muscle-Training-Diary-Watch Watch AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				8699D8E52A1E080E003D06D3 /* Muscle_Training_Diary_Watch_Watch_AppTests.swift */,
+			);
+			path = "Muscle-Training-Diary-Watch Watch AppTests";
+			sourceTree = "<group>";
+		};
+		8699D8EE2A1E080E003D06D3 /* Muscle-Training-Diary-Watch Watch AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8699D8EF2A1E080E003D06D3 /* Muscle_Training_Diary_Watch_Watch_AppUITests.swift */,
+				8699D8F12A1E080E003D06D3 /* Muscle_Training_Diary_Watch_Watch_AppUITestsLaunchTests.swift */,
+			);
+			path = "Muscle-Training-Diary-Watch Watch AppUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,10 +506,12 @@
 				8601507C29BF5AF900F35836 /* Frameworks */,
 				8601507D29BF5AF900F35836 /* Resources */,
 				868CB29429DBC31D0068E9A2 /* ShellScript */,
+				8699D8F92A1E080E003D06D3 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8699D8F42A1E080E003D06D3 /* PBXTargetDependency */,
 			);
 			name = "Muscle-Training-Diary";
 			packageProductDependencies = (
@@ -338,6 +528,7 @@
 				860150D529BF5F7700F35836 /* FirebasePerformance */,
 				860150D729BF5F7700F35836 /* FirebaseRemoteConfig */,
 				860150D929BF5F7700F35836 /* FirebaseStorage */,
+				860B21BE2A01693300C3B880 /* Alamofire */,
 			);
 			productName = "Muscle-Training-Diary";
 			productReference = 8601507F29BF5AF900F35836 /* Muscle-Training-Diary.app */;
@@ -379,6 +570,59 @@
 			productReference = 8601509F29BF5AFA00F35836 /* Muscle-Training-DiaryUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		8699D8D12A1E080D003D06D3 /* Muscle-Training-Diary-Watch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8699D8F62A1E080E003D06D3 /* Build configuration list for PBXNativeTarget "Muscle-Training-Diary-Watch Watch App" */;
+			buildPhases = (
+				8699D8CE2A1E080D003D06D3 /* Sources */,
+				8699D8CF2A1E080D003D06D3 /* Frameworks */,
+				8699D8D02A1E080D003D06D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Muscle-Training-Diary-Watch Watch App";
+			productName = "Muscle-Training-Diary-Watch Watch App";
+			productReference = 8699D8D22A1E080D003D06D3 /* Muscle-Training-Diary-Watch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8699D8E02A1E080E003D06D3 /* Muscle-Training-Diary-Watch Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8699D8FA2A1E080E003D06D3 /* Build configuration list for PBXNativeTarget "Muscle-Training-Diary-Watch Watch AppTests" */;
+			buildPhases = (
+				8699D8DD2A1E080E003D06D3 /* Sources */,
+				8699D8DE2A1E080E003D06D3 /* Frameworks */,
+				8699D8DF2A1E080E003D06D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8699D8E32A1E080E003D06D3 /* PBXTargetDependency */,
+			);
+			name = "Muscle-Training-Diary-Watch Watch AppTests";
+			productName = "Muscle-Training-Diary-Watch Watch AppTests";
+			productReference = 8699D8E12A1E080E003D06D3 /* Muscle-Training-Diary-Watch Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8699D8EA2A1E080E003D06D3 /* Muscle-Training-Diary-Watch Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8699D8FD2A1E080E003D06D3 /* Build configuration list for PBXNativeTarget "Muscle-Training-Diary-Watch Watch AppUITests" */;
+			buildPhases = (
+				8699D8E72A1E080E003D06D3 /* Sources */,
+				8699D8E82A1E080E003D06D3 /* Frameworks */,
+				8699D8E92A1E080E003D06D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8699D8ED2A1E080E003D06D3 /* PBXTargetDependency */,
+			);
+			name = "Muscle-Training-Diary-Watch Watch AppUITests";
+			productName = "Muscle-Training-Diary-Watch Watch AppUITests";
+			productReference = 8699D8EB2A1E080E003D06D3 /* Muscle-Training-Diary-Watch Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -386,7 +630,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					8601507E29BF5AF900F35836 = {
@@ -399,6 +643,17 @@
 					8601509E29BF5AFA00F35836 = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 8601507E29BF5AF900F35836;
+					};
+					8699D8D12A1E080D003D06D3 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					8699D8E02A1E080E003D06D3 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 8699D8D12A1E080D003D06D3;
+					};
+					8699D8EA2A1E080E003D06D3 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 8699D8D12A1E080D003D06D3;
 					};
 				};
 			};
@@ -414,6 +669,7 @@
 			packageReferences = (
 				860150B229BF5B9200F35836 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				860150C229BF5F7700F35836 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				860B21BD2A01693300C3B880 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 8601508029BF5AF900F35836 /* Products */;
 			projectDirPath = "";
@@ -422,6 +678,9 @@
 				8601507E29BF5AF900F35836 /* Muscle-Training-Diary */,
 				8601509429BF5AFA00F35836 /* Muscle-Training-DiaryTests */,
 				8601509E29BF5AFA00F35836 /* Muscle-Training-DiaryUITests */,
+				8699D8D12A1E080D003D06D3 /* Muscle-Training-Diary-Watch Watch App */,
+				8699D8E02A1E080E003D06D3 /* Muscle-Training-Diary-Watch Watch AppTests */,
+				8699D8EA2A1E080E003D06D3 /* Muscle-Training-Diary-Watch Watch AppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -445,6 +704,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8601509D29BF5AFA00F35836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8699D8D02A1E080D003D06D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8699D8DC2A1E080E003D06D3 /* Preview Assets.xcassets in Resources */,
+				8699D8D92A1E080E003D06D3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8699D8DF2A1E080E003D06D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8699D8E92A1E080E003D06D3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -480,17 +762,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				860B219F29FEBBE800C3B880 /* ChatView.swift in Sources */,
+				860B21B529FFAE1800C3B880 /* Chat+CoreDataClass.swift in Sources */,
 				8601511F29C22A2C00F35836 /* LoadState.swift in Sources */,
 				868CB29929DC09020068E9A2 /* GridStyle.swift in Sources */,
+				860B21A429FECD3200C3B880 /* ChatStore.swift in Sources */,
 				86001A0429D14301000601CB /* ChartView.swift in Sources */,
+				860B21AB29FFA60D00C3B880 /* CoreDataModel.xcdatamodeld in Sources */,
+				860B219D29FEBB8700C3B880 /* Message.swift in Sources */,
 				86001A0729D1431B000601CB /* ChartStore.swift in Sources */,
 				86001A0129D065DA000601CB /* TrainingDataStore.swift in Sources */,
 				868CB29B29DC12B70068E9A2 /* UserDefaults+Extension.swift in Sources */,
 				860150BE29BF5D9700F35836 /* HomeStore.swift in Sources */,
 				860019F629CFC5C2000601CB /* DataInputView.swift in Sources */,
+				860B21B829FFAFD500C3B880 /* ChatDataManager.swift in Sources */,
+				860B21BA29FFBB0100C3B880 /* GptClient.swift in Sources */,
+				860B21BC2A001EB800C3B880 /* ChatAPI.swift in Sources */,
 				860019F929D0089D000601CB /* ValueUnit.swift in Sources */,
+				86D93A492A1E0B9900E4516D /* HomeWatchConnection.swift in Sources */,
 				860019F429CFC552000601CB /* TrainingDataView.swift in Sources */,
 				860150BA29BF5D6B00F35836 /* HomeView.swift in Sources */,
+				860B21B629FFAE1800C3B880 /* Chat+CoreDataProperties.swift in Sources */,
 				860019FD29D059CE000601CB /* DataInputStore.swift in Sources */,
 				860150DD29BF620C00F35836 /* FirebaseClient.swift in Sources */,
 				860150DF29BF63CA00F35836 /* TrainingData.swift in Sources */,
@@ -517,6 +809,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8699D8CE2A1E080D003D06D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8699D8D72A1E080D003D06D3 /* ContentView.swift in Sources */,
+				8699D8D52A1E080D003D06D3 /* Muscle_Training_Diary_WatchApp.swift in Sources */,
+				86D93A442A1E0AFF00E4516D /* ComplicationController.swift in Sources */,
+				86D93A452A1E0AFF00E4516D /* WatchConnection.swift in Sources */,
+				86D93A462A1E0B2700E4516D /* TrainingData.swift in Sources */,
+				86D93A472A1E0B4200E4516D /* ValueUnit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8699D8DD2A1E080E003D06D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8699D8E62A1E080E003D06D3 /* Muscle_Training_Diary_Watch_Watch_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8699D8E72A1E080E003D06D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8699D8F02A1E080E003D06D3 /* Muscle_Training_Diary_Watch_Watch_AppUITests.swift in Sources */,
+				8699D8F22A1E080E003D06D3 /* Muscle_Training_Diary_Watch_Watch_AppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -529,6 +851,21 @@
 			isa = PBXTargetDependency;
 			target = 8601507E29BF5AF900F35836 /* Muscle-Training-Diary */;
 			targetProxy = 860150A029BF5AFA00F35836 /* PBXContainerItemProxy */;
+		};
+		8699D8E32A1E080E003D06D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8699D8D12A1E080D003D06D3 /* Muscle-Training-Diary-Watch Watch App */;
+			targetProxy = 8699D8E22A1E080E003D06D3 /* PBXContainerItemProxy */;
+		};
+		8699D8ED2A1E080E003D06D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8699D8D12A1E080D003D06D3 /* Muscle-Training-Diary-Watch Watch App */;
+			targetProxy = 8699D8EC2A1E080E003D06D3 /* PBXContainerItemProxy */;
+		};
+		8699D8F42A1E080E003D06D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8699D8D12A1E080D003D06D3 /* Muscle-Training-Diary-Watch Watch App */;
+			targetProxy = 8699D8F32A1E080E003D06D3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -650,11 +987,12 @@
 		860150AA29BF5AFA00F35836 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202304121448;
+				CURRENT_PROJECT_VERSION = 202305242008;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Muscle-Training-Diary/Preview Content\"";
 				DEVELOPMENT_TEAM = 97TBWXLG65;
@@ -671,7 +1009,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "hideto1198.Muscle-Training-Diary";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -683,11 +1021,12 @@
 		860150AB29BF5AFA00F35836 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202304121448;
+				CURRENT_PROJECT_VERSION = 202305242008;
 				DEVELOPMENT_ASSET_PATHS = "\"Muscle-Training-Diary/Preview Content\"";
 				DEVELOPMENT_TEAM = 97TBWXLG65;
 				ENABLE_PREVIEWS = YES;
@@ -703,7 +1042,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "hideto1198.Muscle-Training-Diary";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -788,6 +1127,152 @@
 			};
 			name = Release;
 		};
+		8699D8F72A1E080E003D06D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 202305242008;
+				DEVELOPMENT_ASSET_PATHS = "Muscle-Training-Diary-Watch\\ Watch\\ App/Preview\\ Content Muscle-Training-Diary-Watch\\ Watch\\ App/Assets.xcassets";
+				DEVELOPMENT_TEAM = 97TBWXLG65;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Muscle-Training-Diary-Watch";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = Muscle_Training_Diary_Watch_Watch_App.ComplicationController;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "hideto1198.Muscle-Training-Diary";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.4.5;
+				PRODUCT_BUNDLE_IDENTIFIER = "hideto1198.Muscle-Training-Diary.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		8699D8F82A1E080E003D06D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 202305242008;
+				DEVELOPMENT_ASSET_PATHS = "Muscle-Training-Diary-Watch\\ Watch\\ App/Preview\\ Content Muscle-Training-Diary-Watch\\ Watch\\ App/Assets.xcassets";
+				DEVELOPMENT_TEAM = 97TBWXLG65;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Muscle-Training-Diary-Watch";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = Muscle_Training_Diary_Watch_Watch_App.ComplicationController;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "hideto1198.Muscle-Training-Diary";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.4.5;
+				PRODUCT_BUNDLE_IDENTIFIER = "hideto1198.Muscle-Training-Diary.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
+		8699D8FB2A1E080E003D06D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 97TBWXLG65;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hideto1198.Muscle-Training-Diary-Watch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Muscle-Training-Diary-Watch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Muscle-Training-Diary-Watch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Debug;
+		};
+		8699D8FC2A1E080E003D06D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 97TBWXLG65;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hideto1198.Muscle-Training-Diary-Watch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Muscle-Training-Diary-Watch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Muscle-Training-Diary-Watch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Release;
+		};
+		8699D8FE2A1E080E003D06D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 97TBWXLG65;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hideto1198.Muscle-Training-Diary-Watch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Muscle-Training-Diary-Watch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Debug;
+		};
+		8699D8FF2A1E080E003D06D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 97TBWXLG65;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hideto1198.Muscle-Training-Diary-Watch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Muscle-Training-Diary-Watch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -827,6 +1312,33 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		8699D8F62A1E080E003D06D3 /* Build configuration list for PBXNativeTarget "Muscle-Training-Diary-Watch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8699D8F72A1E080E003D06D3 /* Debug */,
+				8699D8F82A1E080E003D06D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8699D8FA2A1E080E003D06D3 /* Build configuration list for PBXNativeTarget "Muscle-Training-Diary-Watch Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8699D8FB2A1E080E003D06D3 /* Debug */,
+				8699D8FC2A1E080E003D06D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8699D8FD2A1E080E003D06D3 /* Build configuration list for PBXNativeTarget "Muscle-Training-Diary-Watch Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8699D8FE2A1E080E003D06D3 /* Debug */,
+				8699D8FF2A1E080E003D06D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -841,6 +1353,14 @@
 		860150C229BF5F7700F35836 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		860B21BD2A01693300C3B880 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -914,7 +1434,25 @@
 			package = 860150C229BF5F7700F35836 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
 		};
+		860B21BE2A01693300C3B880 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 860B21BD2A01693300C3B880 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		860B21A929FFA60D00C3B880 /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				860B21AA29FFA60D00C3B880 /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 860B21AA29FFA60D00C3B880 /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8601507729BF5AF900F35836 /* Project object */;
 }

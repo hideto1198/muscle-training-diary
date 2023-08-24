@@ -31,6 +31,20 @@ struct ChartView: View {
                     }
                 }
             }
+            HStack {
+                Text("期間")
+                Picker("", selection: viewStore.binding(\.$dateFrom)) {
+                    ForEach(Array(viewStore.groupedDatas.keys.map { String($0) }).sorted { compare($0, $1) }, id: \.self) {
+                        Text($0)
+                    }
+                }
+                Text("〜")
+                Picker("", selection: viewStore.binding(\.$dateTo)) {
+                    ForEach(Array(viewStore.groupedDatas.keys.map { String($0) }).sorted { compare($0, $1) }, id: \.self) {
+                        Text($0)
+                    }
+                }
+            }
             .onAppear {
                 viewStore.send(.onAppear)
             }
@@ -40,7 +54,7 @@ struct ChartView: View {
     private var chart: some View {
         WithViewStore(store) { viewStore in
             Chart {
-                ForEach(Array(viewStore.groupedDatas.keys.map { String($0) }).sorted { compare($0, $1) }, id: \.self) {
+                ForEach(Array(viewStore.groupedDatas.keys.map { String($0) }).sorted { compare($0, $1) }.filter { compare(viewStore.dateFrom, $0) && compare($0, viewStore.dateTo) }, id: \.self) {
                     LineMark(
                         x: .value("日付", $0),
                         y: .value("記録", (viewStore.groupedDatas[$0]?.reduce(0, {
@@ -98,10 +112,14 @@ struct ChartView: View {
                         }
                         if trainingData.count != 0 {
                             HStack {
-                                Text("\(trainingData.count)")
-                                Text(" × ")
-                                Text("\(trainingData.setCount)")
-                                Text("セット")
+                                Text("\(String(format: "%.2f", trainingData.count))")
+                                if trainingData.valueUnit == .minutes {
+                                    Text("km")
+                                } else {
+                                    Text(" × ")
+                                    Text("\(trainingData.setCount)")
+                                    Text("セット")
+                                }
                             }
                         }
                     }
@@ -151,7 +169,8 @@ struct ChartView: View {
             return dateFormatter
         }
 
-        return dateFormatter.date(from: ldate)?.compare(dateFormatter.date(from: rdate)!) == .orderedAscending
+//        return dateFormatter.date(from: ldate)?.compare(dateFormatter.date(from: rdate)!) == .orderedAscending
+        return dateFormatter.date(from: ldate)! <= dateFormatter.date(from: rdate)!
     }
 }
 

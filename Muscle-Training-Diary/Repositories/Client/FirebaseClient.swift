@@ -13,6 +13,7 @@ struct FirebaseClient {
     var setTrainingData: @Sendable (_ trainingData: TrainingData) async throws -> Bool
     var fetchTrainingData: @Sendable () async throws -> [TrainingData]
     var deleteTrainingData: @Sendable (_ trainingData: TrainingData) async throws -> Bool
+    var listen: @Sendable () async throws -> AsyncThrowingStream<[Message], Error>
 }
 
 extension DependencyValues {
@@ -47,7 +48,7 @@ extension FirebaseClient: DependencyKey {
                         trainingName: $0.data()["TRAINING_NAME"] as? String ?? "",
                         weight: $0.data()["WEIGHT"] as? Double ?? 0.0,
                         valueUnit: ValueUnit.type(unitString: $0.data()["VALUE_UNIT"] as? String ?? "分"),
-                        count: $0.data()["COUNT"] as? Int ?? 0,
+                        count: $0.data()["COUNT"] as? Double ?? 0,
                         setCount: $0.data()["SET_COUNT"] as? Int ?? 0,
                         memo: $0.data()["MEMO"] as? String ?? ""
                     )
@@ -58,6 +59,30 @@ extension FirebaseClient: DependencyKey {
             guard let trainingDate = trainingData.trainingDate else { fatalError("nil") }
             try await db.collection("USERS").document(userId).collection("TRAINING_DATA").document(trainingDate).delete()
             return true
+        }, listen: {
+            return AsyncThrowingStream { continuation in
+                let chatRef = Firestore.firestore().collection("USERS").document(userId).collection("CHAT_DATA")
+                let listener = chatRef
+                    .order(by: "timestamp")
+                    .addSnapshotListener { querySnapshot, error in
+                        if let error { continuation.finish(throwing: error) }
+                        if let querySnapshot {
+                            var listenedValue: [Message] = []
+                            querySnapshot.documents.filter({ $0.data()["id"] as? String == "" }).forEach {
+                                listenedValue.append(Message(userName: $0.data()["userName"] as! String,
+                                                             messageText: $0.data()["message"] as! String,
+                                                             timestamp: ($0.data()["timestamp"] as! Timestamp).dateValue(),
+                                                             isSelf: $0.data()["isSelf"] as! Bool)
+                                )
+                                chatRef.document($0.documentID).updateData(["id": UUID().uuidString])
+                            }
+                            continuation.yield(listenedValue)
+                        }
+                    }
+                continuation.onTermination = { @Sendable _ in
+                    listener.remove()
+                }
+            }
         })
     }
 }
