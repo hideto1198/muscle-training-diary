@@ -1,0 +1,6 @@
+xcassets:
+  inputs:
+    - Muscle-Training-Diary-Replace/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: Muscle-Training-Diary-Replace/Presentation/SwiftGen/Assets.swift
