@@ -17,33 +17,10 @@ struct HomeDataInputListView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 0) {
-                VStack {
-                    ScrollViewReader { proxy in
-                        ScrollView {
-                            VStack(spacing: 0) {
-                                ForEachStore(store.scope(state: \.homeDataInputStateList, action: \.homeDataInputActions)) {
-                                    HomeDataInputView(store: $0)
-                                        .padding(.all, 5)
-                                    Divider()
-                                }
-                                Spacer()
-                                    .frame(height: 0)
-                                    .id("bottom")
-                            }
-                        }
-                        .onChange(of: store.homeDataInputStateList) {
-                            proxy.scrollTo("bottom")
-                        }
-                    }
-                    Spacer()
-                }
-                .frame(maxWidth: .infinity)
-                .background(
-                    background
-                )
-                if !state.isKeyboardOpen {
-                    buttonArea
+            ZStack {
+                contentView
+                if store.showSuccessView {
+                    successView
                 }
             }
             .background(
@@ -87,6 +64,57 @@ struct HomeDataInputListView: View {
             .navigationBarTitleDisplayMode(.inline)
         }
         
+    }
+    
+    private var successView: some View {
+        VStack {
+            store.successImage
+                .resizable()
+                .scaledToFit()
+                .frame(width: 200)
+            Text("保存したよ")
+        }
+        .padding()
+        .background(
+            Color.white
+                .opacity(0.6)
+                .cornerRadius(10)
+        )
+        .onAppear {
+            send(.onAppearSuccessView)
+        }
+    }
+    
+    private var contentView: some View {
+        VStack(spacing: 0) {
+            VStack {
+                ScrollViewReader { proxy in
+                    ScrollView {
+                        VStack(spacing: 0) {
+                            ForEachStore(store.scope(state: \.homeDataInputStateList, action: \.homeDataInputActions)) {
+                                HomeDataInputView(store: $0)
+                                    .padding(.all, 5)
+                                Divider()
+                            }
+                            Spacer()
+                                .frame(height: 0)
+                                .id("bottom")
+                        }
+                    }
+                    .onChange(of: store.homeDataInputStateList) {
+                        proxy.scrollTo("bottom")
+                    }
+                }
+                Spacer()
+            }
+            .frame(maxWidth: .infinity)
+            .background(
+                background
+            )
+            if !state.isKeyboardOpen {
+                buttonArea
+            }
+        }
     }
     
     private var background: some View {
@@ -169,7 +197,12 @@ struct HomeDataInputListView: View {
     }
 }
 
-#Preview {
+#Preview("成功画面無し") {
     HomeDataInputListView(store: Store(initialState: HomeDataInputListStore.State(),
+                                       reducer: { HomeDataInputListStore() }))
+}
+
+#Preview("成功画面あり") {
+    HomeDataInputListView(store: Store(initialState: HomeDataInputListStore.State(showSuccessView: true),
                                        reducer: { HomeDataInputListStore() }))
 }
