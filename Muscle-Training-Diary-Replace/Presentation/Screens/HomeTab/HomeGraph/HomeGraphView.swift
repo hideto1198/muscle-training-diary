@@ -20,18 +20,39 @@ struct HomeGraphView: View {
                 dataEmpty
             } else {
                 chart
-                if let selectedDate = store.selectedDate {
-                    ScrollView {
-                        ForEach(store.trainingDataList.filter { $0.formattedDate == selectedDate }, id: \.self) { data in
-                            HomeDataView(training: data)
-                                .padding(.bottom, 3)
+                    .background(
+                        Asset.chiiawaUsagiPicture.swiftUIImage
+                            .resizable()
+                            .scaledToFit()
+                            .opacity(0.4)
+                            .frame(height: 250)
+                    )
+                Group {
+                    if store.selectedDate != nil {
+                        ScrollView {
+                            ForEach(store.filteredDataList, id: \.self) { data in
+                                HomeDataView(training: data)
+                                    .padding(.bottom, 3)
+                            }
                         }
+                    } else {
+                        notSelectedDate
                     }
-                    .frame(maxHeight: UIScreen.main.bounds.height / 2)
                 }
+                .frame(maxHeight: UIScreen.main.bounds.height / 2)
             }
         }
         .background(Asset.lightGreen.swiftUIColor)
+    }
+    
+    private var notSelectedDate: some View {
+        ZStack {
+            Asset.chiikawaPicture.swiftUIImage
+                .resizable()
+                .scaledToFit()
+
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
     private var dataEmpty: some View {

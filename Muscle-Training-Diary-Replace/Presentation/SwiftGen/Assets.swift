@@ -25,10 +25,12 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
   internal static let accentColor = ColorAsset(name: "AccentColor")
+  internal static let chiiawaUsagiPicture = ImageAsset(name: "chiiawaUsagiPicture")
   internal static let chiikabu = ImageAsset(name: "chiikabu")
   internal static let chiikabu2 = ImageAsset(name: "chiikabu2")
   internal static let chiikawa = ImageAsset(name: "chiikawa")
   internal static let chiikawaHouse = ImageAsset(name: "chiikawaHouse")
+  internal static let chiikawaPicture = ImageAsset(name: "chiikawaPicture")
   internal static let chiikawaWithChiikabu = ImageAsset(name: "chiikawaWithChiikabu")
   internal static let chiikuwa = ImageAsset(name: "chiikuwa")
   internal static let dekakabu = ImageAsset(name: "dekakabu")
