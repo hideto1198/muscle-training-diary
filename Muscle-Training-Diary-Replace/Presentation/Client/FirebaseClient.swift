@@ -34,6 +34,7 @@ extension FirebaseClient: DependencyKey {
                 .map { $0.convert() }
         }, saveTrainingData: { trainingData in
             try FirebaseRepository.saveTrainingData(userId: userId, trainingData: trainingData)
+            StorageRepository.set(trainingName: trainingData.trainingName)
         }, deleteTrainingData: { trainingData in
             try await FirebaseRepository.deleteTrainingData(userId: userId, trainingData: trainingData)
         })

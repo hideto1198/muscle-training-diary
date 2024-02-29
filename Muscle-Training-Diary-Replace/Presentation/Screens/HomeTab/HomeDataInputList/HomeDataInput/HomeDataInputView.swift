@@ -52,7 +52,6 @@ struct HomeDataInputView: View {
             Image(systemName: "calendar")
                 .frame(width: 30)
             DatePicker("", selection: $store.training.date, displayedComponents: .date)
-                .accessibilityIdentifier(pickerId)
                 .colorInvert()
                 .colorMultiply(.black)
                 .environment(\.locale, Locale(identifier: "ja_JP"))

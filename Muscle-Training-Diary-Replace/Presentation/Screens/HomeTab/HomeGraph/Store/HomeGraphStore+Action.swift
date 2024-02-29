@@ -9,7 +9,8 @@ import Foundation
 import ComposableArchitecture
 
 extension HomeGraphStore {
-    enum Action: ViewAction {
+    enum Action: ViewAction, BindableAction {
+        case binding(BindingAction<State>)
         case view(ViewAction)
     }
 }

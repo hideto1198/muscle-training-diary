@@ -23,6 +23,10 @@ struct HomeDataDetailArea: View {
         .padding()
         .frame(width: 170, height: 115, alignment: .top)
         .background(
+            Color.white
+                .opacity(0.6)
+        )
+        .background(
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(Color.white, lineWidth: 2)

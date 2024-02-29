@@ -23,4 +23,12 @@ enum StorageRepository {
     static func getUserId() -> String? {
         UserDefaultsStorage.getUserId()
     }
+    
+    static func set(sort: Sort) {
+        UserDefaultsStorage.set(sort: sort)
+    }
+    
+    static func getSort() -> Sort {
+        UserDefaultsStorage.getSort()
+    }
 }

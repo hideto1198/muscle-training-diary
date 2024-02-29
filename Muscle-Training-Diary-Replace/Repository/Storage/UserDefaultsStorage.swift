@@ -12,7 +12,9 @@ enum UserDefaultsStorage {
     
     static func set(trainingName: String) {
         var trainingNames = getTraingNames()
-        trainingNames.append(trainingName)
+        if !trainingNames.contains(trainingName) {
+            trainingNames.append(trainingName)
+        }
         trainingNames.sort(by: { $0 < $1 })
         store.set(trainingNames, forKey: Keys.trainingNames.rawValue)
     }
@@ -30,12 +32,22 @@ enum UserDefaultsStorage {
         guard store.contains(forKey: Keys.userId.rawValue) else { return nil }
         return store.string(forKey: Keys.userId.rawValue)
     }
+
+    static func set(sort: Sort) {
+        store.set(sort.rawValue, forKey: Keys.sort.rawValue)
+    }
+    
+    static func getSort() -> Sort {
+        guard store.contains(forKey: Keys.sort.rawValue) else { return .alphabet }
+        return Sort(rawValue: store.integer(forKey: Keys.sort.rawValue))!
+    }
 }
 
 extension UserDefaultsStorage {
     enum Keys: String {
         case userId
         case trainingNames
+        case sort
     }
 }
 

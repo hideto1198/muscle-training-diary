@@ -12,6 +12,8 @@ struct StorageClient {
     var setTrainingNames: (String) -> Void
     var getTrainingNames: () -> [String]
     var getUserId: () -> String
+    var setSort: (Sort) -> Void
+    var getSort: () -> Sort
 }
 
 extension DependencyValues {
@@ -29,6 +31,10 @@ extension StorageClient: DependencyKey {
             StorageRepository.getTraingNames()
         }, getUserId: {
             StorageRepository.getUserId() ?? UUID().uuidString
+        }, setSort: { sort in
+            StorageRepository.set(sort: sort)
+        }, getSort: {
+            StorageRepository.getSort()
         })
     }
     
@@ -39,6 +45,9 @@ extension StorageClient: DependencyKey {
             ["アシストチンニング", "アシストディップ", "アブドミナル", "アームカール", "アームカール(EZ)", "インクラインダンベルプレス", "インドアバイク", "グルート", "ケーブルクロスオーバー", "ケーブルフライ", "ショルダープレス", "シーテッドロー", "シーデッドレッグプレス", "スミスマシン(インクライン)", "スミスマシン(ベンチ)", "ダンベルカール", "ダンベルフライ", "ダンベルプレス", "ダンベルプレス(インクライン)", "チェストプレス", "デックラインプレス", "デッドリフト", "トライセップス", "トレッドミル", "トーソローテーション", "バイセップスカール", "ヒップアダクター", "ヒップアブダクター", "フロントラットプルダウン", "ベンチプレス", "ペクトラルフライ", "ラットプルダウン", "ラテラルレイズ", "リアテルトイド", "レッグエクステンション", "レッグカール", "レッグレイズ", "ロー"]
         }, getUserId: {
             return UUID().uuidString
+        }, setSort: { _ in
+        }, getSort: {
+            .alphabet
         })
     }
 }

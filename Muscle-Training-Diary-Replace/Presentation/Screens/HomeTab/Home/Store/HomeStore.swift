@@ -39,6 +39,9 @@ struct HomeStore {
             case .trainingDataReceived(.success(let trainingDataList)):
                 state.homeDataListState.trainingDataList = trainingDataList
                 state.homeDataListState.homeDataList = IdentifiedArray(uniqueElements: trainingDataList.map { HomeDataStore.State(training: $0) })
+                Array(Set(trainingDataList.map { $0.name })).forEach {
+                    storageClient.setTrainingNames($0)
+                }
                 return .none
             default:
                 return .none

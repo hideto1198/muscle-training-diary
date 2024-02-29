@@ -15,18 +15,53 @@ struct HomeGraphView: View {
 
     var body: some View {
         VStack {
-            chart
-            if let selectedDate = store.selectedDate {
-                ScrollView {
-                    ForEach(store.trainingDataList.filter { $0.formattedDate == selectedDate }, id: \.self) { data in
-                        HomeDataView(training: data)
-                            .padding(.bottom, 3)
+            datePickers
+            if store.groupedData.isEmpty {
+                dataEmpty
+            } else {
+                chart
+                if let selectedDate = store.selectedDate {
+                    ScrollView {
+                        ForEach(store.trainingDataList.filter { $0.formattedDate == selectedDate }, id: \.self) { data in
+                            HomeDataView(training: data)
+                                .padding(.bottom, 3)
+                        }
                     }
+                    .frame(maxHeight: UIScreen.main.bounds.height / 2)
                 }
-                .frame(maxHeight: UIScreen.main.bounds.height / 2)
             }
         }
         .background(Asset.lightGreen.swiftUIColor)
+    }
+    
+    private var dataEmpty: some View {
+        VStack {
+            Asset.hachiwareShobon.swiftUIImage
+                .resizable()
+                .scaledToFit()
+                .frame(width: 150)
+            Text("該当するデータはないよ。")
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+    
+    
+    private var datePickers: some View {
+        HStack {
+            Text("日付")
+            DatePicker("", selection: $store.startDate, displayedComponents: .date)
+                .colorInvert()
+                .colorMultiply(.black)
+                .environment(\.locale, Locale(identifier: "ja_JP"))
+                .labelsHidden()
+            Text("〜")
+            DatePicker("", selection: $store.endDate, displayedComponents: .date)
+                .colorInvert()
+                .colorMultiply(.black)
+                .environment(\.locale, Locale(identifier: "ja_JP"))
+                .labelsHidden()
+        }
+        .padding(.horizontal)
     }
     
     private var chart: some View {
@@ -72,7 +107,12 @@ struct HomeGraphView: View {
     }
 }
 
-#Preview {
+#Preview("データあり") {
     HomeGraphView(store: Store(initialState: HomeGraphStore.State(trainingDataList: [.fake,]),
+                               reducer: { HomeGraphStore() }))
+}
+
+#Preview("データなし") {
+    HomeGraphView(store: Store(initialState: HomeGraphStore.State(trainingDataList: []),
                                reducer: { HomeGraphStore() }))
 }

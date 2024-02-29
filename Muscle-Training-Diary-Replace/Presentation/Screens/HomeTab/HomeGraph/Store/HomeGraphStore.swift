@@ -11,6 +11,7 @@ import ComposableArchitecture
 @Reducer
 struct HomeGraphStore {
     var body: some ReducerOf<Self> {
+        BindingReducer()
         Reduce { state, action in
             switch action {
             case .view(let viewAction):
@@ -27,6 +28,8 @@ struct HomeGraphStore {
                     state.selectedDate = date
                     return .none
                 }
+            default:
+                return .none
             }
         }
     }

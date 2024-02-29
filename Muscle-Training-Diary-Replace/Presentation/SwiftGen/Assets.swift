@@ -36,6 +36,7 @@ internal enum Asset {
   internal static let grassland = ImageAsset(name: "grassland")
   internal static let green01 = ColorAsset(name: "green01")
   internal static let hachiwareLabel = ImageAsset(name: "hachiwareLabel")
+  internal static let hachiwareShobon = ImageAsset(name: "hachiwareShobon")
   internal static let kusamushiriLicense = ImageAsset(name: "kusamushiriLicense")
   internal static let lightGreen = ColorAsset(name: "lightGreen")
   internal static let muscleHachiware = ImageAsset(name: "muscleHachiware")
