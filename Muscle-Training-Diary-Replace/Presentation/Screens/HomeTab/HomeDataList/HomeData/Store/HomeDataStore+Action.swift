@@ -16,6 +16,5 @@ extension HomeDataStore {
 
 extension HomeDataStore.Action {
     enum ViewAction {
-        
     }
 }

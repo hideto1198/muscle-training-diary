@@ -33,6 +33,10 @@ struct Training: Equatable, Hashable, Identifiable {
         if unit == .kilogram && setCount.error { return true }
         return false
     }
+    
+    var formattedDate: String {
+        date.fullDate
+    }
 }
 
 extension Training {
@@ -49,5 +53,9 @@ extension Training {
     
     static var fake: Self {
         .init(date: Date(), name: "ベンチプレス", weight: .init(text: "100.0"), count: .init(text: "10"), setCount: .init(text: "3"), unit: .kilogram)
+    }
+    
+    static var feke2: Self {
+        .init(date: Date(), name: "インクラインベンチプレス", weight: .init(text: "100.0"), count: .init(text: "10"), setCount: .init(text: "3"), unit: .kilogram)
     }
 }

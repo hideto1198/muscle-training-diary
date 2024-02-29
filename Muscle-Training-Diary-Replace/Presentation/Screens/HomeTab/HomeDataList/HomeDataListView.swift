@@ -38,28 +38,70 @@ struct HomeDataListView: View {
     }
     
     var content: some View {
-        List {
-            ForEach(store.trainingDataList.filter {
-                guard !searchText.isEmpty else { return true }
-                return $0.name.contains(searchText)
-            }, id: \.id) {
-                HomeDataView(training: $0)
-                    .padding(.bottom)
-                    .tag($0.id)
+        VStack(alignment: .leading) {
+            label(image: store.detailStatus.image, text: "最大と前回")
+            .padding(.horizontal)
+            .onTapGesture {
+                send(.detailLabelTapped, animation: .smooth)
             }
-            .onDelete { offset in
-                send(.onDeleteItem(offset))
+            if store.detailStatus == .open && searchText.isEmpty {
+                ScrollView(.horizontal) {
+                    LazyHGrid(rows: [.init(.fixed(115)), .init(.fixed(115))]) {
+                        ForEach(store.trainingDetailList) { detail in
+                            NavigationLink(destination: {
+                                HomeGraphView(store: Store(initialState: HomeGraphStore.State(trainingDataList: store.trainingDataList.filter { $0.name == detail.name }),
+                                                           reducer: { HomeGraphStore() }))
+                                .toolbar {
+                                    ToolbarItem(placement: .principal) {
+                                        Text(detail.name)
+                                            .foregroundColor(.black)
+                                            .font(.custom("HanazomeFont", size: 18))
+                                    }
+                                }
+                            }) {
+                                HomeDataDetailArea(trainingDetail: detail)
+                            }
+                        }
+                    }
+                    .padding()
+                }
             }
-            .listRowBackground(Asset.lightGreen.swiftUIColor)
-            .listRowSeparator(.hidden)
-            .listRowInsets(EdgeInsets())
+            label(image: Asset.hachiwareLabel.swiftUIImage, text: "一覧")
+                .padding(.horizontal)
+            List {
+                ForEach(store.trainingDataList.filter {
+                    guard !searchText.isEmpty else { return true }
+                    return $0.name.contains(searchText)
+                }, id: \.id) {
+                    HomeDataView(training: $0)
+                        .padding(.bottom)
+                        .tag($0.id)
+                }
+                .onDelete { offset in
+                    send(.onDeleteItem(offset))
+                }
+                .listRowBackground(Asset.lightGreen.swiftUIColor)
+                .listRowSeparator(.hidden)
+                .listRowInsets(EdgeInsets())
+            }
+            .listStyle(.plain)
         }
-        .listStyle(.plain)
         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: Text("調べる"))
+    }
+    
+    private func label(image: Image, text: String) -> some View {
+        HStack {
+            image
+                .resizable()
+                .scaledToFit()
+                .frame(height: 20)
+            Text(text)
+        }
+        .padding(.horizontal)
     }
 }
 
 #Preview {
-    HomeDataListView(store: Store(initialState: HomeDataListStore.State(trainingDataList: [.fake, .fake, .fake]),
+    HomeDataListView(store: Store(initialState: HomeDataListStore.State(trainingDataList: [.fake, .fake, .fake, .feke2]),
                                   reducer: { HomeDataListStore() }))
 }

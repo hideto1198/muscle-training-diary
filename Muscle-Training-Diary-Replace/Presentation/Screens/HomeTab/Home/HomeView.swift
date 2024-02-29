@@ -32,6 +32,7 @@ struct HomeView: View {
             .sheet(item: $store.scope(state: \.homeDataInputListState,
                                       action: \.homeDataInputListAction)) { store in
                 HomeDataInputListView(store: store)
+                    .interactiveDismissDisabled()
             }
         }
     }

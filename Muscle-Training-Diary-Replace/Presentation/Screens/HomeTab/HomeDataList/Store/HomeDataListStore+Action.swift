@@ -16,7 +16,6 @@ extension HomeDataListStore {
         case view(ViewAction)
         case trainingDataReceived(Result<[Training], Error>)
         case homeDataAction(IdentifiedActionOf<HomeDataStore>)
-        
         enum Alert {
             case okButtonTapped(IndexSet)
             case cancelButtonTapped
@@ -28,5 +27,6 @@ extension HomeDataListStore.Action {
     enum ViewAction {
         case onAppear
         case onDeleteItem(IndexSet)
+        case detailLabelTapped
     }
 }

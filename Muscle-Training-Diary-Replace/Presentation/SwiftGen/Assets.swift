@@ -35,12 +35,17 @@ internal enum Asset {
   internal static let doukutsuGray = ColorAsset(name: "doukutsuGray")
   internal static let grassland = ImageAsset(name: "grassland")
   internal static let green01 = ColorAsset(name: "green01")
+  internal static let hachiwareLabel = ImageAsset(name: "hachiwareLabel")
   internal static let kusamushiriLicense = ImageAsset(name: "kusamushiriLicense")
   internal static let lightGreen = ColorAsset(name: "lightGreen")
   internal static let muscleHachiware = ImageAsset(name: "muscleHachiware")
   internal static let muscleUsagi = ImageAsset(name: "muscleUsagi")
   internal static let pajamaPartys = ImageAsset(name: "pajamaPartys")
+  internal static let shisa = ImageAsset(name: "shisa")
+  internal static let usagiClose = ImageAsset(name: "usagiClose")
   internal static let usagiMagic = ImageAsset(name: "usagiMagic")
+  internal static let usagiMatanozoki = ImageAsset(name: "usagiMatanozoki")
+  internal static let usagiOpen = ImageAsset(name: "usagiOpen")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

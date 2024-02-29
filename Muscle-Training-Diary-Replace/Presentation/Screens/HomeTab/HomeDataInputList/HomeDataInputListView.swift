@@ -67,9 +67,6 @@ struct HomeDataInputListView: View {
                 }
             }
             .alert($store.scope(state: \.alert, action: \.alert))
-            .onTapGesture {
-                send(.keyboardClose, animation: .interactiveSpring)
-            }
             .gesture(
                 DragGesture()
                     .onEnded { gesture in

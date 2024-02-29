@@ -29,6 +29,9 @@ struct HomeDataListStore {
                         .okButtonTapped(indexSet)
                     }
                     return .none
+                case .detailLabelTapped:
+                    state.detailStatus = state.detailStatus == .open ? .close : .open
+                    return .none
                 }
             case .trainingDataReceived(.success(let trainingDataList)):
                 state.loadStatus = .loaded

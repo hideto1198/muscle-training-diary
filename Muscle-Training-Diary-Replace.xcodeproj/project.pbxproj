@@ -83,6 +83,12 @@
 		86ABCC702B8B8B15007904C8 /* HomeDataInputList+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ABCC6F2B8B8B15007904C8 /* HomeDataInputList+Action.swift */; };
 		86ABCC732B8BA361007904C8 /* はなぞめフォント.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86ABCC722B8BA361007904C8 /* はなぞめフォント.ttf */; };
 		86F2707E2B8F2F6500125126 /* AlertState+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F2707D2B8F2F6500125126 /* AlertState+Extension.swift */; };
+		86F270812B8F41D100125126 /* HomeDataDetailArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F270802B8F41D100125126 /* HomeDataDetailArea.swift */; };
+		86F270832B8F44A600125126 /* TrainingDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F270822B8F44A600125126 /* TrainingDetail.swift */; };
+		86F270872B90380A00125126 /* HomeGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F270862B90380A00125126 /* HomeGraphView.swift */; };
+		86F270892B90381E00125126 /* HomeGraphStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F270882B90381E00125126 /* HomeGraphStore.swift */; };
+		86F2708C2B90382C00125126 /* HomeGraphStore+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F2708B2B90382C00125126 /* HomeGraphStore+State.swift */; };
+		86F2708E2B90383400125126 /* HomeGraphStore+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F2708D2B90383400125126 /* HomeGraphStore+Action.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +163,12 @@
 		86ABCC722B8BA361007904C8 /* はなぞめフォント.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "はなぞめフォント.ttf"; sourceTree = "<group>"; };
 		86ABCC742B8BA381007904C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		86F2707D2B8F2F6500125126 /* AlertState+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertState+Extension.swift"; sourceTree = "<group>"; };
+		86F270802B8F41D100125126 /* HomeDataDetailArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataDetailArea.swift; sourceTree = "<group>"; };
+		86F270822B8F44A600125126 /* TrainingDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingDetail.swift; sourceTree = "<group>"; };
+		86F270862B90380A00125126 /* HomeGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGraphView.swift; sourceTree = "<group>"; };
+		86F270882B90381E00125126 /* HomeGraphStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGraphStore.swift; sourceTree = "<group>"; };
+		86F2708B2B90382C00125126 /* HomeGraphStore+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeGraphStore+State.swift"; sourceTree = "<group>"; };
+		86F2708D2B90383400125126 /* HomeGraphStore+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeGraphStore+Action.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -419,6 +431,8 @@
 		863D2A7C2B8B3DE800C12B8C /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
+				86F270842B9037F300125126 /* HomeGraph */,
+				86F2707F2B8F41BE00125126 /* HomeDataDetailArea */,
 				868939FA2B8DDEAD0058D677 /* HomeDataList */,
 				86ABCC672B8B8AD3007904C8 /* HomeDataInputList */,
 				863D2A582B8B0B4E00C12B8C /* Home */,
@@ -510,6 +524,7 @@
 				86ABCC632B8B88F5007904C8 /* Count.swift */,
 				861AD99C2B8C530200868EA6 /* Training.swift */,
 				86893A102B8DF9890058D677 /* LoadStatus.swift */,
+				86F270822B8F44A600125126 /* TrainingDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -540,6 +555,33 @@
 				86ABCC722B8BA361007904C8 /* はなぞめフォント.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		86F2707F2B8F41BE00125126 /* HomeDataDetailArea */ = {
+			isa = PBXGroup;
+			children = (
+				86F270802B8F41D100125126 /* HomeDataDetailArea.swift */,
+			);
+			path = HomeDataDetailArea;
+			sourceTree = "<group>";
+		};
+		86F270842B9037F300125126 /* HomeGraph */ = {
+			isa = PBXGroup;
+			children = (
+				86F270852B9037FB00125126 /* Store */,
+				86F270862B90380A00125126 /* HomeGraphView.swift */,
+			);
+			path = HomeGraph;
+			sourceTree = "<group>";
+		};
+		86F270852B9037FB00125126 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				86F270882B90381E00125126 /* HomeGraphStore.swift */,
+				86F2708B2B90382C00125126 /* HomeGraphStore+State.swift */,
+				86F2708D2B90383400125126 /* HomeGraphStore+Action.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -708,14 +750,18 @@
 			files = (
 				86893A0B2B8DE1DC0058D677 /* HomeDataStore+State.swift in Sources */,
 				863D2A6D2B8B24FB00C12B8C /* FirebaseRepository.swift in Sources */,
+				86F270812B8F41D100125126 /* HomeDataDetailArea.swift in Sources */,
 				868939FF2B8DDEE00058D677 /* HomeDataListStore.swift in Sources */,
 				861AD9A42B8C692C00868EA6 /* RoundedTextStyle.swift in Sources */,
 				863D2A802B8B3E0E00C12B8C /* HomeDataInputView.swift in Sources */,
 				86893A0D2B8DE1E60058D677 /* HomeDataStore+Action.swift in Sources */,
 				86893A112B8DF9890058D677 /* LoadStatus.swift in Sources */,
 				863D2A672B8B187100C12B8C /* MainTabBarStore+State.swift in Sources */,
+				86F2708C2B90382C00125126 /* HomeGraphStore+State.swift in Sources */,
 				863D2A862B8B3E7300C12B8C /* HomeDataInputStore+Action.swift in Sources */,
+				86F270832B8F44A600125126 /* TrainingDetail.swift in Sources */,
 				863D2A782B8B30E900C12B8C /* FirebaseClient.swift in Sources */,
+				86F2708E2B90383400125126 /* HomeGraphStore+Action.swift in Sources */,
 				86ABCC5F2B8B55F5007904C8 /* UserDefaultsStorage.swift in Sources */,
 				86893A0F2B8DEBE40058D677 /* Date+Extension.swift in Sources */,
 				86F2707E2B8F2F6500125126 /* AlertState+Extension.swift in Sources */,
@@ -726,6 +772,7 @@
 				863D2A722B8B25C400C12B8C /* TrainingData.swift in Sources */,
 				863D2A692B8B187A00C12B8C /* MainTabBarStore+Action.swift in Sources */,
 				8688A35B2B8DC04F00C8D42A /* CaseIterable+Extension.swift in Sources */,
+				86F270872B90380A00125126 /* HomeGraphView.swift in Sources */,
 				861AD9992B8C4DBE00868EA6 /* Assets.swift in Sources */,
 				863D2A5D2B8B0B7500C12B8C /* HomeStore.swift in Sources */,
 				86893A012B8DDEEE0058D677 /* HomeDataListStore+State.swift in Sources */,
@@ -737,6 +784,7 @@
 				86893A092B8DE1450058D677 /* HomeDataStore.swift in Sources */,
 				863D2A5B2B8B0B6700C12B8C /* HomeView.swift in Sources */,
 				8688A3572B8D9BA900C8D42A /* NSObject+Extension.swift in Sources */,
+				86F270892B90381E00125126 /* HomeGraphStore.swift in Sources */,
 				86ABCC702B8B8B15007904C8 /* HomeDataInputList+Action.swift in Sources */,
 				861AD99D2B8C530200868EA6 /* Training.swift in Sources */,
 				86ABCC642B8B88F5007904C8 /* Count.swift in Sources */,
@@ -910,7 +958,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202402281826;
+				CURRENT_PROJECT_VERSION = 202402281900;
 				DEVELOPMENT_ASSET_PATHS = "\"Muscle-Training-Diary-Replace/Preview Content\"";
 				DEVELOPMENT_TEAM = 97TBWXLG65;
 				ENABLE_PREVIEWS = YES;
@@ -942,7 +990,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202402281826;
+				CURRENT_PROJECT_VERSION = 202402281900;
 				DEVELOPMENT_ASSET_PATHS = "\"Muscle-Training-Diary-Replace/Preview Content\"";
 				DEVELOPMENT_TEAM = 97TBWXLG65;
 				ENABLE_PREVIEWS = YES;

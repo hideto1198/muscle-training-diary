@@ -41,8 +41,8 @@ extension FirebaseClient: DependencyKey {
     
     static var previewValue: FirebaseClient {
         return Value(fetchTrainingData: {
-            try await Task.sleep(for: .seconds(2))
-            return [.fake, .fake, .fake]
+            try await Task.sleep(for: .seconds(1))
+            return [.fake, .fake, .fake, .feke2]
         }, saveTrainingData: { _ in
         }, deleteTrainingData: { _ in
         })

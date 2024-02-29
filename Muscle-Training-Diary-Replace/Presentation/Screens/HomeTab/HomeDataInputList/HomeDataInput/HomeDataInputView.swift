@@ -57,9 +57,6 @@ struct HomeDataInputView: View {
                 .colorMultiply(.black)
                 .environment(\.locale, Locale(identifier: "ja_JP"))
                 .labelsHidden()
-                .onTapGesture {
-                    triggerDatePickerPopover()
-                }
         }
     }
     
