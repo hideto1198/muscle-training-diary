@@ -37,7 +37,7 @@ struct HomeDataListView: View {
         .alert($store.scope(state: \.alert, action: \.alert))
     }
     
-    var content: some View {
+    private var content: some View {
         VStack(alignment: .leading) {
             HStack {
                 label(image: store.detailStatus.image, text: "最大と前回")
@@ -50,26 +50,7 @@ struct HomeDataListView: View {
             }
             .padding(.horizontal)
             if store.detailStatus == .open && searchText.isEmpty {
-                ScrollView(.horizontal) {
-                    LazyHGrid(rows: [.init(.fixed(115)), .init(.fixed(115))]) {
-                        ForEach(store.trainingDetailList) { detail in
-                            NavigationLink(destination: {
-                                HomeGraphView(store: Store(initialState: HomeGraphStore.State(trainingDataList: store.trainingDataList.filter { $0.name == detail.name }),
-                                                           reducer: { HomeGraphStore() }))
-                                .toolbar {
-                                    ToolbarItem(placement: .principal) {
-                                        Text(detail.name)
-                                            .foregroundColor(.black)
-                                            .font(.custom("HanazomeFont", size: 18))
-                                    }
-                                }
-                            }) {
-                                HomeDataDetailArea(trainingDetail: detail)
-                            }
-                        }
-                    }
-                    .padding()
-                }
+                dataGridView
             }
             label(image: Asset.hachiwareLabel.swiftUIImage, text: "一覧")
                 .padding(.horizontal)
@@ -92,6 +73,29 @@ struct HomeDataListView: View {
             .listStyle(.plain)
         }
         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: Text("調べる"))
+    }
+    
+    private var dataGridView: some View {
+        ScrollView(.horizontal) {
+            LazyHGrid(rows: [.init(.fixed(115)), .init(.fixed(115))]) {
+                ForEach(store.trainingDetailList) { detail in
+                    NavigationLink(destination: {
+                        HomeGraphView(store: Store(initialState: HomeGraphStore.State(trainingDataList: store.trainingDataList.filter { $0.name == detail.name }),
+                                                   reducer: { HomeGraphStore() }))
+                        .toolbar {
+                            ToolbarItem(placement: .principal) {
+                                Text(detail.name)
+                                    .foregroundColor(.black)
+                                    .font(.custom("HanazomeFont", size: 18))
+                            }
+                        }
+                    }) {
+                        HomeDataDetailArea(trainingDetail: detail)
+                    }
+                }
+            }
+            .padding()
+        }
     }
     
     private func label(image: Image, text: String) -> some View {
