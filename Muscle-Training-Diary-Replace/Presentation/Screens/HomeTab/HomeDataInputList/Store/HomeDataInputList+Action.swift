@@ -14,7 +14,8 @@ extension HomeDataInputListStore {
         case view(ViewAction)
         case homeDataInputActions(IdentifiedActionOf<HomeDataInputStore>)
         case saveDone
-        
+        case onAppearSuccessView
+
         case alert(PresentationAction<Alert>)
         enum Alert {
             case okButtonTapped
@@ -31,6 +32,5 @@ extension HomeDataInputListStore.Action {
         case rightSwiped
         case saveButtonTapped
         case dismissModal
-        case onAppearSuccessView
     }
 }

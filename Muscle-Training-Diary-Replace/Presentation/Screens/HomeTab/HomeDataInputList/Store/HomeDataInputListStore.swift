@@ -13,6 +13,7 @@ import UIKit
 struct HomeDataInputListStore {
     @Dependency(\.firebaseClient) var firebaseClient
     @Dependency(\.dismiss) var dismiss
+    enum CancelID { case appearing }
 
     var body: some ReducerOf<Self> {
         Reduce { state, action in
@@ -62,15 +63,16 @@ struct HomeDataInputListStore {
                         .okButtonTapped
                     }
                     return .none
-                case .onAppearSuccessView:
-                    return .run { send in
-                        try await Task.sleep(for: .seconds(1.5))
-                        await send(.closeSuccessView, animation: .easeOut)
-                    }
                 }
             case .closeSuccessView:
                 state.showSuccessView = false
                 return .none
+            case .onAppearSuccessView:
+                return .run { send in
+                    try await Task.sleep(for: .seconds(1.5))
+                    await send(.closeSuccessView, animation: .easeOut)
+                }
+                .cancellable(id: CancelID.appearing)
             case .alert(.presented(.okButtonTapped)):
                 return .run { _ in
                     await dismiss()
@@ -87,7 +89,10 @@ struct HomeDataInputListStore {
                 state.homeDataInputStateList.removeAll(where: { !$0.training.error })
                 state.showSuccessView = true
                 UINotificationFeedbackGenerator().notificationOccurred(.success)
-                return .none
+                return .concatenate(
+                    .cancel(id: CancelID.appearing),
+                    .send(.onAppearSuccessView)
+                )
             case .alert(.dismiss):
                 return .none
             }

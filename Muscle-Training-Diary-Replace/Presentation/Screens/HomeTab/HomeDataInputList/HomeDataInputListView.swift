@@ -80,9 +80,6 @@ struct HomeDataInputListView: View {
                 .opacity(0.6)
                 .cornerRadius(10)
         )
-        .onAppear {
-            send(.onAppearSuccessView)
-        }
     }
     
     private var contentView: some View {
