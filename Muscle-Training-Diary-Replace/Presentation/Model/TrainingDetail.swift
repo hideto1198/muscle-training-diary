@@ -12,7 +12,9 @@ struct TrainingDetail: Equatable, Identifiable {
     let name: String
     let maxWeight: Double
     let previousWeight: Double
+    let previousDate: Date
     let unit: ValueUnit
+    let count: Int
     
     var maxWeightLabel: String {
         "さいだい: \(maxWeight)\(unit.label)"

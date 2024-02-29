@@ -39,11 +39,16 @@ struct HomeDataListView: View {
     
     var content: some View {
         VStack(alignment: .leading) {
-            label(image: store.detailStatus.image, text: "最大と前回")
-            .padding(.horizontal)
+            HStack {
+                label(image: store.detailStatus.image, text: "最大と前回")
+                Spacer()
+                sortButton
+                    .highPriorityGesture(TapGesture())
+            }
             .onTapGesture {
                 send(.detailLabelTapped, animation: .smooth)
             }
+            .padding(.horizontal)
             if store.detailStatus == .open && searchText.isEmpty {
                 ScrollView(.horizontal) {
                     LazyHGrid(rows: [.init(.fixed(115)), .init(.fixed(115))]) {
@@ -98,6 +103,30 @@ struct HomeDataListView: View {
             Text(text)
         }
         .padding(.horizontal)
+    }
+    
+    private var sortButton: some View {
+        Menu {
+            Picker("", selection: $store.sort.sending(\.sortChanged)) {
+                ForEach(Sort.allCases, id: \.self) {
+                    Text($0.label)
+                }
+            }
+        } label: {
+            HStack {
+                store.sort.image
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 20)
+                Text(store.sort.label)
+            }
+            .padding(.horizontal, 7)
+            .padding(.vertical, 3)
+            .foregroundColor(.black)
+            .background(Color.white)
+            .cornerRadius(8)
+            .fixedSize()
+        }
     }
 }
 

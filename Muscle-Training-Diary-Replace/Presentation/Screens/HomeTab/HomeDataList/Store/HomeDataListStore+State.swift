@@ -12,6 +12,7 @@ import ComposableArchitecture
 extension HomeDataListStore {
     @ObservableState
     struct State {
+        var sort: Sort = .alphabet
         var loadStatus: LoadStatus = .none
         var homeDataList: IdentifiedArrayOf<HomeDataStore.State> = []
         var trainingDataList: [Training] = []
@@ -27,8 +28,20 @@ extension HomeDataListStore {
                 return TrainingDetail(name: trainingName,
                                       maxWeight: maxData.weight.doubleNumber,
                                       previousWeight: previousData.weight.doubleNumber,
-                                      unit: maxData.unit)
+                                      previousDate: previousData.date,
+                                      unit: maxData.unit,
+                                      count: trainingDataList.filter({ $0.name == trainingName }).count)
             }
+            .sorted(by: {
+                switch sort {
+                case .alphabet:
+                    return $0.name < $1.name
+                case .count:
+                    return $0.count > $1.count
+                case .rate:
+                    return $0.previousDate > $1.previousDate
+                }
+            })
         }
         @Presents var alert: AlertState<Action.Alert>?
         var detailStatus: DetailStatus = .open

@@ -24,6 +24,7 @@ struct HomeDataDetailArea: View {
         .frame(width: 170, height: 115, alignment: .top)
         .background(
             Color.white
+                .cornerRadius(10)
                 .opacity(0.6)
         )
         .background(
@@ -46,7 +47,9 @@ struct HomeDataDetailArea: View {
     HomeDataDetailArea(trainingDetail: .init(name: "スミスマシンインクライン",
                                              maxWeight: 100.00,
                                              previousWeight: 100.00,
-                                             unit: .kilogram))
+                                             previousDate: Date(),
+                                             unit: .kilogram,
+                                             count: 1))
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Asset.lightGreen.swiftUIColor)
 }

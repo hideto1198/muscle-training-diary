@@ -11,6 +11,7 @@ import ComposableArchitecture
 @Reducer
 struct HomeDataListStore {
     @Dependency(\.firebaseClient) var firebaseClient
+    @Dependency(\.storageClient) var storageClient
 
     var body: some ReducerOf<Self> {
         Reduce { state, action in
@@ -18,6 +19,7 @@ struct HomeDataListStore {
             case .view(let viewAction):
                 switch viewAction {
                 case .onAppear:
+                    state.sort = storageClient.getSort()
                     state.loadStatus = .loading
                     return .run { send in
                         await send(.trainingDataReceived(Result { try await firebaseClient.fetchTrainingData() }))
@@ -44,6 +46,10 @@ struct HomeDataListStore {
                     try await firebaseClient.deleteTrainingData(trainingData.data)
                     await send(.trainingDataReceived(Result { try await firebaseClient.fetchTrainingData() }))
                 }
+            case .sortChanged(let sort):
+                state.sort = sort
+                storageClient.setSort(sort)
+                return .none
             default:
                 return .none
             }
