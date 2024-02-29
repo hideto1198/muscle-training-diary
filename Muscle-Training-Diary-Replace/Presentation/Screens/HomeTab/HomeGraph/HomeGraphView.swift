@@ -20,6 +20,12 @@ struct HomeGraphView: View {
                 dataEmpty
             } else {
                 chart
+                    .padding()
+                    .background(
+                        Color.white
+                            .opacity(0.6)
+                            .cornerRadius(10)
+                    )
                     .background(
                         Asset.chiiawaUsagiPicture.swiftUIImage
                             .resizable()
@@ -27,6 +33,7 @@ struct HomeGraphView: View {
                             .opacity(0.4)
                             .frame(height: 250)
                     )
+                    .padding()
                 Group {
                     if store.selectedDate != nil {
                         ScrollView {
@@ -50,7 +57,7 @@ struct HomeGraphView: View {
             Asset.chiikawaPicture.swiftUIImage
                 .resizable()
                 .scaledToFit()
-
+                .padding()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
@@ -75,12 +82,13 @@ struct HomeGraphView: View {
                 .colorMultiply(.black)
                 .environment(\.locale, Locale(identifier: "ja_JP"))
                 .labelsHidden()
-            Text("〜")
+            Text("から")
             DatePicker("", selection: $store.endDate, displayedComponents: .date)
                 .colorInvert()
                 .colorMultiply(.black)
                 .environment(\.locale, Locale(identifier: "ja_JP"))
                 .labelsHidden()
+            Text("まで")
         }
         .padding(.horizontal)
     }
@@ -92,7 +100,13 @@ struct HomeGraphView: View {
                     x: .value("日付", key),
                     y: .value("記録", value)
                 )
-                .interpolationMethod(.catmullRom)
+                .foregroundStyle(Color.black)
+                .symbol(symbol: {
+                    Asset.kurimanjuHa.swiftUIImage
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25)
+                })
             }
             if let selectedDate = store.selectedDate {
                 PointMark(x: .value("日付", selectedDate),
@@ -124,12 +138,11 @@ struct HomeGraphView: View {
                     )
             }
         }
-        .padding()
     }
 }
 
 #Preview("データあり") {
-    HomeGraphView(store: Store(initialState: HomeGraphStore.State(trainingDataList: [.fake,]),
+    HomeGraphView(store: Store(initialState: HomeGraphStore.State(trainingDataList: [.fake, .fake3]),
                                reducer: { HomeGraphStore() }))
 }
 
