@@ -13,10 +13,7 @@ extension MainTabBarStore {
     enum Action: ViewAction, BindableAction {
         case binding(BindingAction<State>)
         case view(ViewAction)
-        
-        // ChildAction
         case homeAction(HomeStore.Action)
-        case homeDataInputListAction(PresentationAction<HomeDataInputListStore.Action>)
     }
 }
 

@@ -14,31 +14,26 @@ struct MainTabBarView: View {
     @Bindable var store: StoreOf<MainTabBarStore>
     
     var body: some View {
-        NavigationStack {
-            TabView(selection: $store.currentTab) {
-                HomeView(store: store.scope(state: \.homeState, action: \.homeAction))
-                    .background(Asset.lightGreen.swiftUIColor)
-                    .tag(Tab.home.rawValue)
-                    .tabItem {
-                        Asset.chiikawaHouse.swiftUIImage
-                        Text("ほーむ")
-                    }
-                Text("グラフを表示する")
-                    .font(.custom("HanazomeFont", size: 16))
-                    .background(Asset.lightGreen.swiftUIColor)
-                    .tag(Tab.graph.rawValue)
-                    .tabItem {
-                        Asset.pajamaPartys.swiftUIImage
-                        Text("ぐらふ")
-                    }
-            }
-            .navigationTitle("筋トレ日記")
-            .navigationBarTitleDisplayMode(.inline)
-            .sheet(item: $store.scope(state: \.homeDataInputListState,
-                                      action: \.homeDataInputListAction)) { store in
-                HomeDataInputListView(store: store)
-                    .presentationDetents([.medium, .large])
-            }
+        TabView(selection: $store.currentTab) {
+            HomeView(store: store.scope(state: \.homeState, action: \.homeAction))
+                .background(Asset.lightGreen.swiftUIColor)
+                .tag(Tab.home.rawValue)
+                .tabItem {
+                    Asset.chiikawaHouse.swiftUIImage
+                    Text("ほーむ")
+                }
+            Text("グラフを表示する")
+                .font(.custom("HanazomeFont", size: 16))
+                .background(Asset.lightGreen.swiftUIColor)
+                .tag(Tab.graph.rawValue)
+                .tabItem {
+                    Asset.pajamaPartys.swiftUIImage
+                    Text("ぐらふ")
+                }
+        }
+        .tint(.black)
+        .onAppear {
+            UITabBar.appearance().barTintColor = Asset.lightGreen.color
         }
     }
 }

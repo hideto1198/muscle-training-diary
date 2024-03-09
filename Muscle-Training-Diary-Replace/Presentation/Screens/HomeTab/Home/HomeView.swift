@@ -16,9 +16,7 @@ struct HomeView: View {
         NavigationStack {
             ZStack {
                 HomeDataListView(store: store.scope(state: \.homeDataListState, action: \.homeDataListAction))
-                GeometryReader { _ in
-                    footer
-                }
+                footer
                 .ignoresSafeArea(.keyboard, edges: .bottom)
             }
             .toolbar {
@@ -55,7 +53,7 @@ struct HomeView: View {
                 Circle()
                     .fill(Asset.green01.swiftUIColor)
             )
-            .padding(.trailing)
+            .padding([.trailing, .bottom])
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)

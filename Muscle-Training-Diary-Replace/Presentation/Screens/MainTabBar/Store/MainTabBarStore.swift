@@ -13,9 +13,6 @@ struct MainTabBarStore {
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            case .homeAction(.view(.addDataButtonTapped)):
-                state.homeDataInputListState = .init()
-                return .none
             default:
                 return .none
             }
