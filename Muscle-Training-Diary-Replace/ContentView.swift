@@ -10,8 +10,8 @@ import ComposableArchitecture
 
 struct ContentView: View {
     var body: some View {
-        HomeView(store: Store(initialState: HomeStore.State(),
-                              reducer: { HomeStore() }))
+        MainTabBarView(store: Store(initialState: MainTabBarStore.State(),
+                                    reducer: { MainTabBarStore() }))
     }
 }
 
