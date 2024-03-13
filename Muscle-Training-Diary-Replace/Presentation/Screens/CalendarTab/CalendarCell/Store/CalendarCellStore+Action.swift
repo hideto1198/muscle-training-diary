@@ -20,5 +20,6 @@ extension CalendarCellStore.Action {
     public enum ViewAction {
         case onTapped
         case onAppear
+        case onDisappear
     }
 }

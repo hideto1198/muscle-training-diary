@@ -26,15 +26,12 @@ struct CalendarView: View {
             }
             .frame(height: 20)
             VStack(alignment: .leading, spacing: 0) {
-                ForEach(0 ..< store.dates.count, id: \.self) { index in
-                    Divider()
-                    HStack(spacing: 0) {
-                        ForEachStore(store.scope(state: \.dates[index].identifiableArray, action: \.calendarCellAction)) {
-                            CalendarCellView(store: $0)
-                        }
+                LazyVGrid(columns: Array(repeating: .init(spacing: 0), count: 7), spacing: 0) {
+                    ForEachStore(store.scope(state: \.identifiedArray, action: \.calendarCellAction)) {
+                        CalendarCellView(store: $0)
                     }
+                    
                 }
-                Divider()
             }
             Spacer()
         }
@@ -44,4 +41,6 @@ struct CalendarView: View {
 #Preview {
     CalendarView(store: Store(initialState: CalendarStore.State(year: 2024, month: 3),
                               reducer: { CalendarStore() }))
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .background(Asset.lightGreen.swiftUIColor)
 }

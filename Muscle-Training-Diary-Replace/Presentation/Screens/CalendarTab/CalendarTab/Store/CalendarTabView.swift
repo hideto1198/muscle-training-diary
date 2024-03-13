@@ -16,7 +16,7 @@ struct CalendarTabView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
-                Text(store.calendarStates[scrollViewPosition!].calendarModel.yearMonth)
+                Text(store.calendarStates[store.calendarTabSelection!].calendarModel.yearMonth)
                     .font(.custom("HanazomeFont", size: 28))
                     .padding(.horizontal)
                 ScrollViewReader { proxy in

@@ -14,30 +14,27 @@ struct CalendarCellView: View {
 
     var body: some View {
         VStack {
-            Text(store.isTapped ? "Tapped" : "UnTapped")
-            if store.loadStauts == .loading {
-                ProgressView()
+            Text(store.entity.date)
+                .foregroundColor(store.entity.week.foregroundColor)
+            if store.hasData {
+                Asset.hachiwareAndChiikawa.swiftUIImage
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 30)
             } else {
-                Text(store.entity.date)
-                    .foregroundColor(store.entity.week.foregroundColor)
-                if store.hasData {
-                    Asset.hachiwareAndChiikawa.swiftUIImage
-                        .resizable()
-                        .scaledToFit()
-                } else {
-                    Spacer()
-                }
+                Spacer()
+                    .frame(height: 30)
             }
         }
         .frame(height: 60)
         .padding(5)
         .frame(maxWidth: .infinity)
         .background(Color.white.opacity(0.6))
-        .onTapGesture {
-            send(.onTapped)
-        }
         .onAppear {
             send(.onAppear)
+        }
+        .onDisappear {
+            send(.onDisappear)
         }
     }
 }
