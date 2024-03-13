@@ -32,7 +32,7 @@ public struct CalendarModel {
         }
         var date: Int = 1
         
-        for _ in 0...6 {
+        for _ in 0 ..< 6 {
             var weeks: [CalendarCellStore.State] = []
             for row in 0 ..< 7 {
                 if date <= maxDate {
@@ -50,7 +50,6 @@ public struct CalendarModel {
             dates.append(weeks)
             space = 0
         }
-        dates.removeAll(where: { $0.allSatisfy({ $0.entity.date == "" }) })
         identifiedArray = dates.flatMap({$0}).identifiableArray
         return (dates, identifiedArray)
     }

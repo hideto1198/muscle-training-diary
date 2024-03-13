@@ -30,11 +30,6 @@ struct CalendarTabView: View {
                             }
                         }
                         .scrollTargetLayout()
-                        .onAppear {
-                            Task {
-                                proxy.scrollTo(store.calendarTabSelection)
-                            }
-                        }
                     }
                     .scrollTargetBehavior(.paging)
                     .scrollPosition(id: $scrollViewPosition)

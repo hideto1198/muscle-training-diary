@@ -15,19 +15,19 @@ struct MainTabBarView: View {
     
     var body: some View {
         TabView(selection: $store.currentTab) {
+            CalendarTabView(store: store.scope(state: \.calendarTabState, action: \.calendarTabAction))
+                .background(Asset.lightGreen.swiftUIColor)
+                .tag(Tab.calendar.rawValue)
+                .tabItem {
+                    Asset.pajamaPartys.swiftUIImage
+                    Text("カレンダー")
+                }
             HomeView(store: store.scope(state: \.homeState, action: \.homeAction))
                 .background(Asset.lightGreen.swiftUIColor)
                 .tag(Tab.home.rawValue)
                 .tabItem {
                     Asset.chiikawaHouse.swiftUIImage
                     Text("ホーム")
-                }
-            CalendarTabView(store: store.scope(state: \.calendarTabState, action: \.calendarTabAction))
-                .background(Asset.lightGreen.swiftUIColor)
-                .tag(Tab.graph.rawValue)
-                .tabItem {
-                    Asset.pajamaPartys.swiftUIImage
-                    Text("カレンダー")
                 }
         }
         .tint(.black)

@@ -11,13 +11,13 @@ import ComposableArchitecture
 extension MainTabBarStore {
     @ObservableState
     struct State {
-        var currentTab: Tab = .home
+        var currentTab: Int = 1
         var homeState: HomeStore.State = .init()
-        var calendarTabState: CalendarTabStore.State = .init()
+        var calendarTabState: CalendarTabStore.State = .initial()
     }
 
     enum Tab: Int {
         case home
-        case graph
+        case calendar
     }
 }

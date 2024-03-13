@@ -27,11 +27,14 @@ struct CalendarView: View {
             .frame(height: 20)
             VStack(alignment: .leading, spacing: 0) {
                 LazyVGrid(columns: Array(repeating: .init(spacing: 0), count: 7), spacing: 0) {
-                    ForEachStore(store.scope(state: \.identifiedArray, action: \.calendarCellAction)) {
-                        CalendarCellView(store: $0)
+                    ForEachStore(store.scope(state: \.identifiedArray, action: \.calendarCellAction)) { childStore in
+                        VStack(spacing: 0) {
+                            Divider()
+                            CalendarCellView(store: childStore)
+                        }
                     }
-                    
                 }
+                Divider()
             }
             Spacer()
         }
