@@ -14,6 +14,7 @@ extension MainTabBarStore {
         case binding(BindingAction<State>)
         case view(ViewAction)
         case homeAction(HomeStore.Action)
+        case calendarTabAction(CalendarTabStore.Action)
     }
 }
 

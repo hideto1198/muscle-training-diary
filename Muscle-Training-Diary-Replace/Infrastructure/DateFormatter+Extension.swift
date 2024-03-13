@@ -8,7 +8,7 @@
 import Foundation
 
 extension DateFormatter {
-    var trainingDate: DateFormatter {
+    static var trainingDate: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy年MM月dd日"
         return formatter

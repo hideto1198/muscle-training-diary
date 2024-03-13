@@ -13,6 +13,7 @@ extension MainTabBarStore {
     struct State {
         var currentTab: Tab = .home
         var homeState: HomeStore.State = .init()
+        var calendarTabState: CalendarTabStore.State = .init()
     }
 
     enum Tab: Int {

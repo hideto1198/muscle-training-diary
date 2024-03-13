@@ -60,6 +60,6 @@ extension Training {
     }
     
     static var fake3: Self {
-        .init(date: DateFormatter().trainingDate.date(from: "2024年02月29日")!, name: "ベンチプレス", weight: .init(text: "110.0"), count: .init(text: "10"), setCount: .init(text: "3"), unit: .kilogram)
+        .init(date: DateFormatter.trainingDate.date(from: "2024年02月29日")!, name: "ベンチプレス", weight: .init(text: "110.0"), count: .init(text: "10"), setCount: .init(text: "3"), unit: .kilogram)
     }
 }

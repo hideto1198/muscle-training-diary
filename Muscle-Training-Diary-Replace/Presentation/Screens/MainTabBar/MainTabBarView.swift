@@ -20,15 +20,14 @@ struct MainTabBarView: View {
                 .tag(Tab.home.rawValue)
                 .tabItem {
                     Asset.chiikawaHouse.swiftUIImage
-                    Text("ほーむ")
+                    Text("ホーム")
                 }
-            Text("グラフを表示する")
-                .font(.custom("HanazomeFont", size: 16))
+            CalendarTabView(store: store.scope(state: \.calendarTabState, action: \.calendarTabAction))
                 .background(Asset.lightGreen.swiftUIColor)
                 .tag(Tab.graph.rawValue)
                 .tabItem {
                     Asset.pajamaPartys.swiftUIImage
-                    Text("ぐらふ")
+                    Text("カレンダー")
                 }
         }
         .tint(.black)

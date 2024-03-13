@@ -28,9 +28,7 @@ struct HomeDataListView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(
-            Asset.lightGreen.swiftUIColor
-        )
+        .background(Asset.lightGreen.swiftUIColor)
         .onAppear {
             send(.onAppear)
         }

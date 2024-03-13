@@ -20,5 +20,8 @@ struct MainTabBarStore {
         Scope(state: \.homeState, action: \.homeAction) {
             HomeStore()
         }
+        Scope(state: \.calendarTabState, action: \.calendarTabAction) {
+            CalendarTabStore()
+        }
     }
 }
