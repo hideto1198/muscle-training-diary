@@ -15,13 +15,16 @@ struct CalendarTabStore {
         Reduce { state, action in
             switch action {
             case .binding(\.calendarTabSelection):
-                if state.previousTabSelection < state.calendarTabSelection {
-                    let currentState = state.calendarStates[state.calendarTabSelection]
-                    state.calendarStates.append(CalendarStore.State(year: currentState.year, month: currentState.month + 1))
-                } else {
-                    print("減った")
+                guard let calendarTabSelection = state.calendarTabSelection else { return .none }
+                if calendarTabSelection == state.calendarStates.count - 1 {
+                    if let lastState = state.calendarStates.last {
+                        state.calendarStates.append(CalendarStore.State(year: lastState.forward.0, month: lastState.forward.1))
+                    }
+                } else if calendarTabSelection == 0 {
+                    if let firstState = state.calendarStates.first {
+                        state.calendarStates.insert(CalendarStore.State(year: firstState.backward.0, month: firstState.backward.1), at: 0)
+                    }
                 }
-                state.previousTabSelection = state.calendarTabSelection
                 return .none
             default:
                 return .none

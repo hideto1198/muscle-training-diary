@@ -13,6 +13,7 @@ struct FirebaseClient {
     var fetchTrainingData: () async throws -> [Training]
     var saveTrainingData: (TrainingData) throws -> Void
     var deleteTrainingData: (TrainingData) async throws -> Void
+    var hasData: (Date) async throws -> Bool
 }
 
 extension DependencyValues {
@@ -37,6 +38,8 @@ extension FirebaseClient: DependencyKey {
             StorageRepository.set(trainingName: trainingData.trainingName)
         }, deleteTrainingData: { trainingData in
             try await FirebaseRepository.deleteTrainingData(userId: userId, trainingData: trainingData)
+        }, hasData: { date in
+            try await FirebaseRepository.hasData(userId: userId, date: date)
         })
     }
     
@@ -46,6 +49,8 @@ extension FirebaseClient: DependencyKey {
             return [.fake, .fake, .fake, .feke2]
         }, saveTrainingData: { _ in
         }, deleteTrainingData: { _ in
+        }, hasData: { _ in
+            return true
         })
     }
 }

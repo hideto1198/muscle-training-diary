@@ -10,8 +10,15 @@ import ComposableArchitecture
 
 extension CalendarTabStore {
     @CasePathable
-    enum Action: BindableAction {
+    enum Action: ViewAction, BindableAction {
         case binding(BindingAction<State>)
         case calendarAction(IdentifiedActionOf<CalendarStore>)
+        case view(ViewAction)
+    }
+}
+
+extension CalendarTabStore.Action {
+    enum ViewAction {
+        case paging
     }
 }

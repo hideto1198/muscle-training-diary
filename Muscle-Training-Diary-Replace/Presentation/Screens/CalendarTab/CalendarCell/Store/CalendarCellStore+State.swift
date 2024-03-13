@@ -12,7 +12,16 @@ extension CalendarCellStore {
     @ObservableState
     public struct State: Identifiable {
         public var id: UUID = UUID()
+        let year: Int
+        let month: Int
         public let entity: DateEntity
+        public var date: Date {
+            let dateFormatter = DateFormatter.fullDate
+            return dateFormatter.date(from: "\(year)年\(month)月\(entity.date)日 00:00:00")!
+        }
+        public var hasData: Bool = false
+        var loadStauts: LoadStatus = .none
+        var isTapped: Bool = false
     }
 }
 

@@ -9,10 +9,9 @@ import Foundation
 import ComposableArchitecture
 
 public struct CalendarModel {
-    public var year: Int
-    public var month: Int
-    public var dates: [[CalendarCellStore.State]] = []
-    public var identifiedArray: IdentifiedArrayOf<CalendarCellStore.State> = []
+    public let year: Int
+    public let month: Int
+    
     public var yearMonth: String {
         "\(String(year))年\(String(month))月"
     }
@@ -20,12 +19,11 @@ public struct CalendarModel {
     public init(year: Int, month: Int) {
         self.year = year
         self.month = month
-        create()
     }
     
-    mutating private func create() {
-        self.dates.removeAll()
-        self.identifiedArray.removeAll()
+    func create() -> ([[CalendarCellStore.State]], IdentifiedArrayOf<CalendarCellStore.State>) {
+        var dates: [[CalendarCellStore.State]] = []
+        var identifiedArray: IdentifiedArrayOf<CalendarCellStore.State> = []
         var space: Int = week(year: self.year, month: self.month, day: 1).rawValue
         let month31: [Int] = [1, 3, 5, 7, 8, 10, 12]
         var maxDate: Int {
@@ -39,41 +37,30 @@ public struct CalendarModel {
             for row in 0 ..< 7 {
                 if date <= maxDate {
                     if row < space {
-                        weeks.append(.init(entity: .init(date: "", week: .none)))
+                        weeks.append(.init(year: self.year, month: self.month, entity: .init(date: "", week: .none)))
                     } else {
                         let week = week(year: self.year, month: self.month, day: date)
-                        weeks.append(.init(entity: .init(date: "\(date)", week: week)))
+                        weeks.append(.init(year: self.year, month: self.month, entity: .init(date: "\(date)", week: week)))
                         date += 1
                     }
                 } else {
-                    weeks.append(.init(entity: .init(date: "", week: .none)))
+                    weeks.append(.init(year: self.year, month: self.month, entity: .init(date: "", week: .none)))
                 }
             }
-            self.dates.append(weeks)
+            dates.append(weeks)
             space = 0
         }
-        self.dates.removeAll(where: { $0.allSatisfy({ $0.entity.date == "" }) })
-        self.identifiedArray = self.dates.flatMap({$0}).identifiableArray
+        dates.removeAll(where: { $0.allSatisfy({ $0.entity.date == "" }) })
+        identifiedArray = dates.flatMap({$0}).identifiableArray
+        return (dates, identifiedArray)
     }
     
-    public mutating func forward() {
-        if self.month == 12 {
-            self.month = 1
-            self.year += 1
-        } else {
-            self.month += 1
-        }
-        create()
+    public func forward() -> (Int, Int) {
+        return self.month == 12 ? (self.year + 1, 1) : (self.year, self.month + 1)
     }
     
-    public mutating func backward() {
-        if self.month == 1 {
-            self.month = 12
-            self.year -= 1
-        } else {
-            self.month -= 1
-        }
-        create()
+    public func backward() -> (Int, Int) {
+        return self.month == 1 ? (self.year - 1, 12) : (self.year, self.month - 1)
     }
 }
 

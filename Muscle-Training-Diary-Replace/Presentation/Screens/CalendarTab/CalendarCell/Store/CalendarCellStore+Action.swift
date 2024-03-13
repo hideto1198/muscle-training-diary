@@ -12,11 +12,13 @@ extension CalendarCellStore {
     @CasePathable
     public enum Action: ViewAction {
         case view(ViewAction)
+        case receivedData(Bool)
     }
 }
 
 extension CalendarCellStore.Action {
     public enum ViewAction {
         case onTapped
+        case onAppear
     }
 }

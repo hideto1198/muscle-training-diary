@@ -8,20 +8,42 @@
 import SwiftUI
 import ComposableArchitecture
 
+@ViewAction(for: CalendarTabStore.self)
 struct CalendarTabView: View {
+    @State private var scrollViewPosition: Int? = 1
     @Bindable var store: StoreOf<CalendarTabStore>
     
     var body: some View {
         NavigationStack {
-            ZStack(alignment: .top) {
-                TabView(selection: $store.calendarTabSelection) {
-                    ForEach(Array(store.scope(state: \.calendarStates, action: \.calendarAction).enumerated()),
-                            id: \.element) { index, childStore in
-                        CalendarView(store: childStore)
-                            .tag(index)
+            VStack(alignment: .leading) {
+                Text(store.calendarStates[scrollViewPosition!].calendarModel.yearMonth)
+                    .font(.custom("HanazomeFont", size: 28))
+                    .padding(.horizontal)
+                ScrollViewReader { proxy in
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack(spacing: 0) {
+                            ForEach(Array(store.scope(state: \.calendarStates, action: \.calendarAction).enumerated()),
+                                    id: \.element) { index, childStore in
+                                CalendarView(store: childStore)
+                                    .id(index)
+                                    .frame(width: UIScreen.main.bounds.width)
+                            }
+                        }
+                        .scrollTargetLayout()
+                        .onAppear {
+                            Task {
+                                proxy.scrollTo(store.calendarTabSelection)
+                            }
+                        }
+                    }
+                    .scrollTargetBehavior(.paging)
+                    .scrollPosition(id: $scrollViewPosition)
+                    .onChange(of: scrollViewPosition) { oldValue, newValue in
+                        if newValue == 0 {
+                            scrollViewPosition = oldValue
+                        }
                     }
                 }
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Asset.lightGreen.swiftUIColor)
@@ -34,6 +56,7 @@ struct CalendarTabView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
         }
+        .bind($store.calendarTabSelection, to: $scrollViewPosition)
     }
 }
 

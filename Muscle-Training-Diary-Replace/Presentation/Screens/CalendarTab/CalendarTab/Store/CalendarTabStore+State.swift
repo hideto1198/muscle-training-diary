@@ -11,8 +11,7 @@ import ComposableArchitecture
 extension CalendarTabStore {
     @ObservableState
     struct State {
-        var calendarTabSelection: Int = 1
-        var previousTabSelection: Int = 1
+        var calendarTabSelection: Int? = 1
         var calendarStates: IdentifiedArrayOf<CalendarStore.State>
         
         init() {

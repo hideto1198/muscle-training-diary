@@ -10,16 +10,23 @@ import ComposableArchitecture
 
 @ViewAction(for: CalendarCellStore.self)
 struct CalendarCellView: View {
-    let store: StoreOf<CalendarCellStore>
+    var store: StoreOf<CalendarCellStore>
 
     var body: some View {
         VStack {
-            Text(store.entity.date)
-                .foregroundColor(store.entity.week.foregroundColor)
-            if !store.entity.date.isEmpty {
-                Asset.hachiwareAndChiikawa.swiftUIImage
-                    .resizable()
-                    .scaledToFit()
+            Text(store.isTapped ? "Tapped" : "UnTapped")
+            if store.loadStauts == .loading {
+                ProgressView()
+            } else {
+                Text(store.entity.date)
+                    .foregroundColor(store.entity.week.foregroundColor)
+                if store.hasData {
+                    Asset.hachiwareAndChiikawa.swiftUIImage
+                        .resizable()
+                        .scaledToFit()
+                } else {
+                    Spacer()
+                }
             }
         }
         .frame(height: 60)
@@ -29,18 +36,21 @@ struct CalendarCellView: View {
         .onTapGesture {
             send(.onTapped)
         }
+        .onAppear {
+            send(.onAppear)
+        }
     }
 }
 
 #Preview("金曜日") {
-    CalendarCellView(store: Store(initialState: CalendarCellStore.State(entity: .init(date: "1",week: .fri)),
+    CalendarCellView(store: Store(initialState: CalendarCellStore.State(year: 2023, month: 3, entity: .init(date: "1",week: .fri)),
                                   reducer: { CalendarCellStore() }))
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(Asset.lightGreen.swiftUIColor)
 }
 
 #Preview("土曜日") {
-    CalendarCellView(store: Store(initialState: CalendarCellStore.State(entity: .init(date: "1",week: .sat)),
+    CalendarCellView(store: Store(initialState: CalendarCellStore.State(year: 2023, month: 3, entity: .init(date: "1",week: .sat)),
                                   reducer: { CalendarCellStore() }))
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(Asset.lightGreen.swiftUIColor)

@@ -30,4 +30,14 @@ enum FirebaseRepository {
             $0.reference.delete()
         }
     }
+    
+    static func hasData(userId: String, date: Date) async throws -> Bool {
+        let adjustedDate = Calendar.current.date(byAdding: .hour, value: 9, to: date)!
+        let nextDate = Calendar.current.date(byAdding: .day, value: 1, to: adjustedDate)!
+        let ref = try await db.collection("users").document(userId).collection("training_data")
+            .whereField("training_date", isGreaterThanOrEqualTo: adjustedDate)
+            .whereField("training_date", isLessThan: nextDate)
+            .getDocuments()
+        return !ref.documents.isEmpty
+    }
 }

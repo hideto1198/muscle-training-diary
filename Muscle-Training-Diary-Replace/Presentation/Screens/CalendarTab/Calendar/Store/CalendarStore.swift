@@ -22,12 +22,14 @@ struct CalendarStore {
                     state.calendarModel.backward()
                     return .none
                 }
-            case .calendarCellAction(.element(id: let uuid, action: .view(.onTapped))):
-                print(uuid)
+            case .calendarCellAction(.element(id: let id, action: .view(.onTapped))):
+                print(id)
+                return .none
+            default:
                 return .none
             }
         }
-        .forEach(\.calendarModel.identifiedArray, action: \.calendarCellAction) {
+        .forEach(\.identifiedArray, action: \.calendarCellAction) {
             CalendarCellStore()
         }
     }

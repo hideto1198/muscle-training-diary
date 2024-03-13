@@ -13,4 +13,12 @@ extension DateFormatter {
         formatter.dateFormat = "yyyy年MM月dd日"
         return formatter
     }
+    
+    static var fullDate: DateFormatter {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy年MM月dd日 hh:mm:ss"
+            formatter.locale = Locale.current
+            formatter.timeZone = TimeZone.current
+            return formatter
+        }
 }

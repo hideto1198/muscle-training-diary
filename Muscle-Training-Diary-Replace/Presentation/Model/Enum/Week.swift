@@ -41,7 +41,9 @@ public enum Week: Int, Equatable, CaseIterable {
     
     public var foregroundColor: Color {
         switch self {
-        case .sat, .sun:
+        case .sat:
+            return .blue
+        case .sun:
             return .red
         default:
             return .black

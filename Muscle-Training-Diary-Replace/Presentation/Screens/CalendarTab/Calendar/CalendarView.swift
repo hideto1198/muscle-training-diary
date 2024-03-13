@@ -14,20 +14,6 @@ struct CalendarView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Button {
-                    send(.backwordButtonTapped, animation: .bouncy)
-                } label: {
-                    Text("←")
-                }
-                Text("\(store.calendarModel.yearMonth)")
-                Button {
-                    send(.forwardButtonTapped, animation: .bouncy)
-                } label: {
-                    Text("→")
-                }
-            }
-            .padding(.vertical)
             GeometryReader { proxy in
                 HStack(spacing: 0) {
                     ForEach(Week.weeks, id: \.self) {
@@ -40,10 +26,10 @@ struct CalendarView: View {
             }
             .frame(height: 20)
             VStack(alignment: .leading, spacing: 0) {
-                ForEach(0 ..< store.calendarModel.dates.count, id: \.self) { index in
+                ForEach(0 ..< store.dates.count, id: \.self) { index in
                     Divider()
                     HStack(spacing: 0) {
-                        ForEachStore(store.scope(state: \.calendarModel.dates[index].identifiableArray, action: \.calendarCellAction)) {
+                        ForEachStore(store.scope(state: \.dates[index].identifiableArray, action: \.calendarCellAction)) {
                             CalendarCellView(store: $0)
                         }
                     }
