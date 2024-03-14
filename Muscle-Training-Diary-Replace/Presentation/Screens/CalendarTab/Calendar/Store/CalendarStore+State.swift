@@ -10,7 +10,7 @@ import ComposableArchitecture
 
 extension CalendarStore {
     @ObservableState
-    struct State: Identifiable {
+    struct State: Identifiable, Equatable {
         var id: UUID = UUID()
         let year: Int
         let month: Int

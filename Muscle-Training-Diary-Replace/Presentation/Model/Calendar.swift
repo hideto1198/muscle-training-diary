@@ -8,7 +8,7 @@
 import Foundation
 import ComposableArchitecture
 
-public struct CalendarModel {
+public struct CalendarModel: Equatable {
     public let year: Int
     public let month: Int
     

@@ -20,5 +20,6 @@ extension CalendarTabStore {
 extension CalendarTabStore.Action {
     enum ViewAction {
         case paging
+        case onCenter
     }
 }

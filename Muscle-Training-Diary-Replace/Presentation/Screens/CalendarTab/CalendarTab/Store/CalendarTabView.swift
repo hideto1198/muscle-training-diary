@@ -24,6 +24,16 @@ struct CalendarTabView: View {
                         CalendarView(store: childStore)
                             .tag(store.calendarStates[index].id)
                             .frame(width: UIScreen.main.bounds.width)
+                            .background(
+                                GeometryReader { proxy in
+                                    Color.clear
+                                        .onChange(of: proxy.frame(in: .global).midX) { value in
+                                            if value == UIScreen.main.bounds.width / 2 {
+                                                send(.onCenter)
+                                            }
+                                        }
+                                }
+                            )
                     }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))

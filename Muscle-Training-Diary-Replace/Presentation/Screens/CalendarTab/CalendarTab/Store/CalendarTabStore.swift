@@ -14,11 +14,15 @@ struct CalendarTabStore {
         BindingReducer()
         Reduce { state, action in
             switch action {
-            case .binding(\.tabSelection):
+            case .view(.onCenter):
                 let currentState = state.calendarStates.first { $0.id == state.tabSelection }!
-                state.calendarStates[0] = CalendarStore.State(year: currentState.backward.0, month: currentState.backward.1)
-                state.calendarStates[2] = CalendarStore.State(year: currentState.forward.0, month: currentState.forward.1)
-                state.calendarStates[1] = currentState
+                guard state.calendarStates[1] != currentState else { return .none }
+                let calendarStates = [
+                    CalendarStore.State(year: currentState.backward.0, month: currentState.backward.1),
+                    currentState,
+                    CalendarStore.State(year: currentState.forward.0, month: currentState.forward.1)
+                ]
+                state.calendarStates = calendarStates
                 return .none
             default:
                 return .none
