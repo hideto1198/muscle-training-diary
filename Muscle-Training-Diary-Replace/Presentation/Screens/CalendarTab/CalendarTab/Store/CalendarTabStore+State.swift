@@ -11,15 +11,18 @@ import ComposableArchitecture
 extension CalendarTabStore {
     @ObservableState
     struct State {
-        var calendarTabSelection: Int? = 1
-        var calendarStates: IdentifiedArrayOf<CalendarStore.State> = []
+        var tabSelection: UUID
+        var calendarStates: [CalendarStore.State] = []
+        var identifiedArray: IdentifiedArrayOf<CalendarStore.State> {
+            get { IdentifiedArray(uniqueElements: calendarStates) }
+            set { calendarStates = newValue.elements }
+        }
     }
 }
 
 extension CalendarTabStore.State {
     static func initial() -> Self {
-        var calendarTabSelection: Int? = 1
-        var calendarStates: IdentifiedArrayOf<CalendarStore.State> = []
+        var calendarStates: [CalendarStore.State] = []
         let today = Date()
         let todayComponent = Calendar.current.dateComponents([.year, .month, .day], from: today)
         let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: today)
@@ -31,7 +34,7 @@ extension CalendarTabStore.State {
             .init(year: todayComponent.year!, month: todayComponent.month!),
             .init(year: nextMonthComponent.year!, month: nextMonthComponent.month!),
         ]
-        calendarTabSelection = calendarStates.endIndex - 2
-        return CalendarTabStore.State(calendarTabSelection: calendarTabSelection, calendarStates: calendarStates)
+        let tabSelection: UUID = calendarStates[1].id
+        return CalendarTabStore.State(tabSelection: tabSelection, calendarStates: calendarStates)
     }
 }
