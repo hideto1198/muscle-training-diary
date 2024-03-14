@@ -24,12 +24,10 @@ extension CalendarTabStore.State {
         let todayComponent = Calendar.current.dateComponents([.year, .month, .day], from: today)
         let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: today)
         let nextMonthComponent = Calendar.current.dateComponents([.year, .month, .day], from: nextMonth!)
-        for i  in (1 ... 12).reversed() {
-            let backMonth = Calendar.current.date(byAdding: .month, value: -i, to: today)
-            let backMonthComponent = Calendar.current.dateComponents([.year, .month, .day], from: backMonth!)
-            calendarStates.append(.init(year: backMonthComponent.year!, month: backMonthComponent.month!))
-        }
-        calendarStates += [
+        let backMonth = Calendar.current.date(byAdding: .month, value: -1, to: today)
+        let backMonthComponent = Calendar.current.dateComponents([.year, .month, .day], from: backMonth!)
+        calendarStates = [
+            .init(year: backMonthComponent.year!, month: backMonthComponent.month!),
             .init(year: todayComponent.year!, month: todayComponent.month!),
             .init(year: nextMonthComponent.year!, month: nextMonthComponent.month!),
         ]
